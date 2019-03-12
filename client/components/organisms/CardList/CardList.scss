@@ -1,0 +1,15 @@
+body{
+  max-width: 1200px;
+  margin : 10px auto;
+}
+
+.card-menu{
+  display : flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.root{
+  background-color: black;
+}

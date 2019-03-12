@@ -1,0 +1,43 @@
+{
+  "name": "react-server-side-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^2.1.0",
+    "isomorphic-style-loader": "^5.0.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "recompose": "^0.30.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-clean-plugin": "^0.2.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "classnames": "^2.2.6",
+    "express": "^4.16.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "react-router-config": "^4.4.0-beta.6",
+    "react-router-dom": "^4.3.1",
+    "react-saga": "^0.2.6",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2"
+  },
+  "scripts": {
+    "build:client": "webpack --config webpack.client.config.js --mode development",
+    "build:server": "webpack --config webpack.server.config.js --mode development && node server",
+    "build": "npm run build:client && npm run build:server && node server"
+  }
+}

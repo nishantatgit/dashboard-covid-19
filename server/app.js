@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
 import React from "react";
-import { Provider, END } from "react-redux";
+import { Provider } from "react-redux";
 import { createStore } from "redux";
 import StyleContext from "isomorphic-style-loader/StyleContext";
 
@@ -12,7 +12,7 @@ import template from "./template";
 import HomePage from "../client/pages/HomePage/HomePage";
 import configureStore from "../client/store/configureStore";
 import { FETCH_CARD_LIST_DATA_FROM_API } from "../client/components/organisms/CardList/CardList.actions";
-import { runSaga, storeIO } from "redux-saga";
+import { END } from "redux-saga";
 import fetchCardListSaga from "../client/components/organisms/CardList/CardList.saga";
 import { put } from "redux-saga/effects";
 import rootReducer from "../client/reducer/rootReducer";
@@ -57,13 +57,14 @@ const insertCss = function(...styles) {
   });
 };
 
-const content = renderToString(
-  <Provider store={store}>
-    <StyleContext.Provider value={{ insertCss }}>
-      <HomePage />
-    </StyleContext.Provider>
-  </Provider>
-);
+const content = () =>
+  renderToString(
+    <Provider store={store}>
+      <StyleContext.Provider value={{ insertCss }}>
+        <HomePage />
+      </StyleContext.Provider>
+    </Provider>
+  );
 
 app.use(express.static("./public"));
 
@@ -84,19 +85,40 @@ app.all("/*", function(req, res, next) {
 });
 
 app.get("/", function(req, res) {
-  const allTasks = store.sagas;
   //store.dispatch(END);
-  console.log("allTasks: ", allTasks[0].toPromise());
-  Promise.all(allTasks.map(task => task.toPromise())).then(() => {
+  //console.log("allTasks: ", allTasks[0].toPromise());
+  /*Promise.all(allTasks.map(task => task.toPromise())).then(() => {
     console.log("store state ", store.getState());
     res.send(template(lang, dir, content, css));
-  });
-  // store.dispatch({
-  //   type : FETCH_CARD_LIST_DATA_FROM_API,
-  //   payload: [1,20]
-  // });
-  // console.log('store state ', store.getState());
+  }); */
+  /*async function sendResponse() {
+    await store.execSagaTasks(true, dispatch => {
+      dispatch({
+        type: FETCH_CARD_LIST_DATA_FROM_API,
+        payload: [1, 20]
+      });
+    });
+    res.send(template(lang, dir, content(), css));
+  }*/
 
+  function sendResponse() {
+    console.log(" END -----> ", END);
+    let sagaPromise = store.saga.toPromise();
+    sagaPromise.then(function() {
+      console.log("promise resolved");
+      res.send(template(lang, dir, content(), css));
+      console.log("response sent!");
+    });
+    store.dispatch({
+      type: FETCH_CARD_LIST_DATA_FROM_API,
+      payload: [1, 20]
+    });
+    store.dispatch(END);
+  }
+
+  sendResponse();
+
+  //store.sagas.result();
   // setTimeout(function(){
   //   console.log('store state ', store.getState());
   // },5000);

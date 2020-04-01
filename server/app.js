@@ -1,43 +1,15 @@
-import express from "express";
-import bodyParser from "body-parser";
-import React from "react";
-import { Provider } from "react-redux";
-import StyleContext from "isomorphic-style-loader/StyleContext";
-
-import { renderToString } from "react-dom/server";
-import configs from "./serverConfigs";
-import template from "./template";
-import HomePage from "../client/pages/HomePage/HomePage";
-import configureStore from "../client/store/configureStore";
-import { FETCH_CARD_LIST_DATA_FROM_API } from "../client/components/organisms/CardList/CardList.actions";
-import { END } from "redux-saga";
-
-//runSaga signature
-// runSaga(iterator, {subscribe, dispatch}, [monitor])
+import express from 'express';
+import bodyParser from 'body-parser';
+import configs from './serverConfigs';
+import template from './template';
+import fs from 'fs';
+import path from 'path';
+import * as d3 from 'd3';
 
 const app = express();
 const { port, lang, dir } = configs;
 
-const store = configureStore();
-
-const css = new Set();
-
-const insertCss = function(...styles) {
-  styles.forEach(function(style) {
-    css.add(style._getCss());
-  });
-};
-
-const content = () =>
-  renderToString(
-    <Provider store={store}>
-      <StyleContext.Provider value={{ insertCss }}>
-        <HomePage />
-      </StyleContext.Provider>
-    </Provider>
-  );
-
-app.use(express.static("./public"));
+app.use(express.static('./public'));
 
 app.use(
   bodyParser.urlencoded({
@@ -45,30 +17,51 @@ app.use(
   })
 );
 
-app.all("/*", function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+app.all('/*', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header(
-    "Access-Control-Allow-Headers",
-    "Content-type,Accept,X-Access-Token,X-Key"
+    'Access-Control-Allow-Headers',
+    'Content-type,Accept,X-Access-Token,X-Key'
   );
   next();
 });
 
-app.get("/", function(req, res) {
-  function sendResponse() {
-    let sagaPromise = store.saga.toPromise();
-    sagaPromise.then(function() {
-      res.send(template(lang, dir, content(), css));
-    });
-    store.dispatch({
-      type: FETCH_CARD_LIST_DATA_FROM_API,
-      payload: [1, 20]
-    });
-    store.dispatch(END);
-  }
-  sendResponse();
+app.get('/', function(req, res) {
+  console.log('request recieved...');
+  res.statusCode = 200;
+  res.send(html);
 });
+
+// read the json data once before starting the server
+
+let data = fs.readFileSync(`./data/covid19india.json`, 'utf-8');
+data = data && JSON.parse(data);
+const stateWiseData = {};
+const stateData = data.forEach(node => {
+  // current state values --> Recovered, Hospitalized, Deceased
+  const currentState = node['Detected State'];
+  if (!stateWiseData[currentState]) {
+    stateWiseData[currentState] = {
+      State: currentState,
+      Recovered: 0,
+      Hospitalized: 0,
+      Deceased: 0,
+      'Total Cases': 0
+    };
+  }
+
+  const currentStateData = stateWiseData[currentState];
+  currentStateData[node['Current Status']] =
+    currentStateData[node['Current Status']] + 1;
+  currentStateData['Total Cases'] = currentStateData['Total Cases'] + 1;
+  stateWiseData[currentState] = currentStateData;
+});
+
+console.log('stateWiseData ', stateWiseData);
+
+//console.log('data ', data);
+const html = template(lang, dir, { data, stateWiseData });
 
 app.listen(port);
 

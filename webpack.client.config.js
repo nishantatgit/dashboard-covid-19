@@ -6,7 +6,7 @@ module.exports = {
     path: __dirname + '/public'
   },
   module: {
-    rules : [
+    rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
@@ -14,15 +14,18 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['isomorphic-style-loader',
-                {
-                  loader: 'css-loader',
-                },
-                {
-                  loader: 'sass-loader'
-                }
-              ]
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       }
     ]
   }
-}
+};

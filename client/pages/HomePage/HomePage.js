@@ -1,35 +1,57 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { withStyles } from 'isomorphic-style-loader';
-
-import CardList from '../../components/organisms/CardList/CardList';
+import MaterialTable from '../../components/molecules/MaterialTable/MaterialTable';
+import BarChart from '../../components/molecules/Barchart/Barchart';
 import styles from './HomePage.scss';
-import configStore from '../../store/configureStore';
 
-class HomePage extends React.Component{
-  constructor(props){
+class HomePage extends React.Component {
+  constructor(props) {
     super(props);
+    this.state = {};
   }
-  render(){
-    console.log(this.state);
-    return(
+  componentDidMount() {
+    console.log('window.__NX__', window.__NX__);
+    try {
+      const data = { ...window.__NX__ };
+      this.setState({
+        data: { ...data }
+      });
+    } catch (e) {
+      console.warn('Invalid json data');
+    }
+  }
+  render() {
+    const {
+      state: { data }
+    } = this;
+    const stateData = data && data.stateWiseData;
+    const states = stateData && Object.keys(stateData).filter(val => !!val);
+    const values =
+      stateData && Object.values(stateData).filter(val => !!val.State);
+    const headers =
+      stateData && values.length && values[0] && Object.keys(values[0]);
+    return (
       <div>
-        <CardList/>
+        <h1> COVID-19 disease spread in India </h1>
+        <section className="table-container">
+          {stateData && (
+            <MaterialTable
+              states={states}
+              values={values}
+              headers={headers}
+              options={{ pageSize: 30 }}
+            ></MaterialTable>
+          )}
+        </section>
+        {stateData && (
+          <BarChart
+            data={values
+              .sort((a, b) => b['Total Cases'] - a['Total Cases'])
+              .slice(0, 15)}
+          ></BarChart>
+        )}
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getCategories: () => dispatch({ type: 'GET_CATEGORIES'})
-  }
-}
-
-const mapStateToProps = (state) => {
-  const { hotels } = state;
-  console.log('hotels ', hotels);
-  return { hotels };
-} 
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

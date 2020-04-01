@@ -1,29 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import StyleContext from "isomorphic-style-loader/StyleContext";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import HomePage from './pages/HomePage/HomePage';
 
-import HomePage from "./pages/HomePage/HomePage";
-import configureStore from "./store/configureStore";
+const component = <HomePage />;
 
-const css = new Set(); // CSS for all rendered React components
-style => css.add(style._getCss());
-const insertCss = (...styles) =>
-  styles.forEach(function(style) {
-    style._insertCss();
-  });
-
-const store = configureStore();
-
-console.log("store", store);
-console.log(store.getState && store.getState());
-
-const component = (
-  <Provider store={store}>
-    <StyleContext.Provider value={{ insertCss }}>
-      <HomePage />
-    </StyleContext.Provider>
-  </Provider>
-);
-
-ReactDOM.hydrate(component, document.getElementById("react-app"));
+ReactDOM.render(component, document.getElementById('react-app'));

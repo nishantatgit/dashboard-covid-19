@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (lang, dir, data) {\n  return \"<!doctype html>\\n<html lang=\\\"\".concat(lang, \"\\\" dir=\\\"\").concat(dir, \"\\\">\\n  <head>\\n    <link rel=\\\"stylesheet\\\" href=\\\"simple-grid.css\\\"></link>\\n    <link\\n  rel=\\\"stylesheet\\\"\\n  href=\\\"https://fonts.googleapis.com/icon?family=Material+Icons\\\"\\n/>\\n    <style></style>\\n  </head>\\n  <body>\\n    <div id=\\\"react-app\\\"></div>\\n    <script> window.__NX__ = \").concat(JSON.stringify(data), \"</script>\\n    <script src=\\\"client.js\\\"></script>\\n  </body>\\n</html>\");\n});\n\n//# sourceURL=webpack:///./server/template.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (lang, dir, data) {\n  return \"<!doctype html>\\n<html lang=\\\"\".concat(lang, \"\\\" dir=\\\"\").concat(dir, \"\\\">\\n  <head>\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n    <link rel=\\\"stylesheet\\\" href=\\\"simple-grid.css\\\"></link>\\n    <link\\n  rel=\\\"stylesheet\\\"\\n  href=\\\"https://fonts.googleapis.com/icon?family=Material+Icons\\\"\\n/>\\n    <style></style>\\n  </head>\\n  <body>\\n    <div id=\\\"react-app\\\"></div>\\n    <script> window.__NX__ = \").concat(JSON.stringify(data), \"</script>\\n    <script src=\\\"client.js\\\"></script>\\n  </body>\\n</html>\");\n});\n\n//# sourceURL=webpack:///./server/template.js?");
 
 /***/ }),
 

@@ -1,6 +1,7 @@
 export default (lang, dir, data) => `<!doctype html>
 <html lang="${lang}" dir="${dir}">
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="simple-grid.css"></link>
     <link
   rel="stylesheet"

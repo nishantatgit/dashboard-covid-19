@@ -1,4 +1,5 @@
 import MaterialTable from 'material-table';
+import { Paper } from '@material-ui/core';
 
 import React, { useState } from 'react';
 
@@ -7,7 +8,7 @@ export default function Table({ states, values, headers, options = {} }) {
     padding: 'dense',
     pageSize: 15,
     headerStyle: {
-      backgroundColor: '#01579b',
+      backgroundColor: '#013440',
       color: '#FFF'
     },
     paging: false,
@@ -26,6 +27,9 @@ export default function Table({ states, values, headers, options = {} }) {
         data={values}
         title="Statewise disease spread"
         options={updatedOptions}
+        components={{
+          Container: props => <Paper {...props} elevation={0} />
+        }}
       ></MaterialTable>
     </section>
   );

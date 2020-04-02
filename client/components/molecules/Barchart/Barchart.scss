@@ -25,6 +25,15 @@
     color: #ffffff;
     fill: #ffffff;
   }
+
+  .x-axis {
+    text {
+      text-anchor: end;
+      font-size: 1rem;
+      color: #013440;
+      transform: rotate(-45deg);
+    }
+  }
   /* Color Theme Swatches in Hex */
   // .Hand-drawn-space-elements-seamless-pattern-1-hex { color: #F23869; }
   // .Hand-drawn-space-elements-seamless-pattern-2-hex { color: #A62461; }

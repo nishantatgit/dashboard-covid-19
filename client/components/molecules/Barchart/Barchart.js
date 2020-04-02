@@ -14,7 +14,7 @@ export default class Barchart extends React.Component {
     console.log('bar chart data --> ', data);
     D3Barchart.create(
       this.barChartRef,
-      data.map(v => ({ data: v['Total Cases'], labelText: v.State })),
+      data.map(v => ({ data: v['Confirmed'], labelText: v.State })),
       {
         labelX: 'State',
         labelY: 'Total cases'
@@ -23,11 +23,11 @@ export default class Barchart extends React.Component {
   }
 
   render() {
+    const {
+      props: { className }
+    } = this;
     return (
-      <section
-        className="barchart-container container"
-        ref={this.barChartRef}
-      ></section>
+      <section className="barchart-container" ref={this.barChartRef}></section>
     );
   }
 }

@@ -30,8 +30,7 @@ class HomePage extends React.Component {
     const headers =
       stateData && values.length && values[0] && Object.keys(values[0]);
     return (
-      <div>
-        <h1> COVID-19 disease spread in India </h1>
+      <div className="flex-container">
         <section className="table-container">
           {stateData && (
             <MaterialTable
@@ -45,7 +44,7 @@ class HomePage extends React.Component {
         {stateData && (
           <BarChart
             data={values
-              .sort((a, b) => b['Total Cases'] - a['Total Cases'])
+              .sort((a, b) => b['Confirmed'] - a['Confirmed'])
               .slice(0, 5)}
           ></BarChart>
         )}

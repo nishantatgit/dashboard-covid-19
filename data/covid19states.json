@@ -1,0 +1,298 @@
+[
+  {
+    "State": "Maharashtra",
+    "Confirmed": 339,
+    "Recovered": 39,
+    "Deaths": 16,
+    "Active": 284,
+    "LastUpdated": "02/04/20 16:02"
+  },
+  {
+    "State": "Kerala",
+    "Confirmed": 265,
+    "Recovered": 26,
+    "Deaths": 2,
+    "Active": 237,
+    "LastUpdated": "01/04/20 19:27"
+  },
+  {
+    "State": "Tamil Nadu",
+    "Confirmed": 234,
+    "Recovered": 6,
+    "Deaths": 1,
+    "Active": 227,
+    "LastUpdated": "01/04/20 18:17"
+  },
+  {
+    "State": "Delhi",
+    "Confirmed": 152,
+    "Recovered": 6,
+    "Deaths": 2,
+    "Active": 144,
+    "LastUpdated": "01/04/20 19:47"
+  },
+  {
+    "State": "Rajasthan",
+    "Confirmed": 131,
+    "Recovered": 3,
+    "Deaths": 0,
+    "Active": 128,
+    "LastUpdated": "01/04/20 18:17"
+  },
+  {
+    "State": "Uttar Pradesh",
+    "Confirmed": 117,
+    "Recovered": 17,
+    "Deaths": 2,
+    "Active": 98,
+    "LastUpdated": "01/04/20 18:17"
+  },
+  {
+    "State": "Andhra Pradesh",
+    "Confirmed": 132,
+    "Recovered": 2,
+    "Deaths": 0,
+    "Active": 130,
+    "LastUpdated": "02/04/20 10:52"
+  },
+  {
+    "State": "Karnataka",
+    "Confirmed": 121,
+    "Recovered": 9,
+    "Deaths": 3,
+    "Active": 109,
+    "LastUpdated": "01/04/20 20:02"
+  },
+  {
+    "State": "Telangana",
+    "Confirmed": 127,
+    "Recovered": 14,
+    "Deaths": 9,
+    "Active": 104,
+    "LastUpdated": "02/04/20 14:32"
+  },
+  {
+    "State": "Gujarat",
+    "Confirmed": 87,
+    "Recovered": 7,
+    "Deaths": 7,
+    "Active": 73,
+    "LastUpdated": "02/04/20 10:52"
+  },
+  {
+    "State": "Madhya Pradesh",
+    "Confirmed": 98,
+    "Recovered": 0,
+    "Deaths": 6,
+    "Active": 92,
+    "LastUpdated": "02/04/20 10:17"
+  },
+  {
+    "State": "Jammu and Kashmir",
+    "Confirmed": 62,
+    "Recovered": 2,
+    "Deaths": 2,
+    "Active": 58,
+    "LastUpdated": "01/04/20 20:22"
+  },
+  {
+    "State": "Punjab",
+    "Confirmed": 47,
+    "Recovered": 1,
+    "Deaths": 4,
+    "Active": 42,
+    "LastUpdated": "02/04/20 15:12"
+  },
+  {
+    "State": "Haryana",
+    "Confirmed": 47,
+    "Recovered": 27,
+    "Deaths": 0,
+    "Active": 20,
+    "LastUpdated": "01/04/20 19:02"
+  },
+  {
+    "State": "West Bengal",
+    "Confirmed": 37,
+    "Recovered": 3,
+    "Deaths": 6,
+    "Active": 28,
+    "LastUpdated": "01/04/20 19:12"
+  },
+  {
+    "State": "Bihar",
+    "Confirmed": 24,
+    "Recovered": 0,
+    "Deaths": 1,
+    "Active": 23,
+    "LastUpdated": "01/04/20 19:12"
+  },
+  {
+    "State": "Chandigarh",
+    "Confirmed": 17,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 17,
+    "LastUpdated": "01/04/20 22:52"
+  },
+  {
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Recovered": 3,
+    "Deaths": 0,
+    "Active": 10,
+    "LastUpdated": "27/03/20 11:52"
+  },
+  {
+    "State": "Assam",
+    "Confirmed": 16,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 16,
+    "LastUpdated": "02/04/20 9:42"
+  },
+  {
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 10,
+    "LastUpdated": "30/03/20 11:27"
+  },
+  {
+    "State": "Chhattisgarh",
+    "Confirmed": 9,
+    "Recovered": 3,
+    "Deaths": 0,
+    "Active": 6,
+    "LastUpdated": "31/03/20 23:07"
+  },
+  {
+    "State": "Uttarakhand",
+    "Confirmed": 7,
+    "Recovered": 2,
+    "Deaths": 0,
+    "Active": 5,
+    "LastUpdated": "30/03/20 6:27"
+  },
+  {
+    "State": "Goa",
+    "Confirmed": 5,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 5,
+    "LastUpdated": "29/03/20 18:52"
+  },
+  {
+    "State": "Odisha",
+    "Confirmed": 5,
+    "Recovered": 1,
+    "Deaths": 0,
+    "Active": 4,
+    "LastUpdated": "01/04/20 23:42"
+  },
+  {
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Recovered": 1,
+    "Deaths": 1,
+    "Active": 1,
+    "LastUpdated": "30/03/20 19:00"
+  },
+  {
+    "State": "Puducherry",
+    "Confirmed": 3,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 3,
+    "LastUpdated": "01/04/20 11:02"
+  },
+  {
+    "State": "Jharkhand",
+    "Confirmed": 1,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 1,
+    "LastUpdated": "31/03/20 17:52"
+  },
+  {
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 2,
+    "LastUpdated": "02/04/20 9:42"
+  },
+  {
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 1,
+    "LastUpdated": "26/03/20 7:19"
+  },
+  {
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 1,
+    "LastUpdated": "02/04/20 11:42"
+  },
+  {
+    "State": "Dadra and Nagar Haveli",
+    "Confirmed": 0,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 0,
+    "LastUpdated": "26/03/20 7:19"
+  },
+  {
+    "State": "Daman and Diu",
+    "Confirmed": 0,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 0,
+    "LastUpdated": "26/03/20 7:19"
+  },
+  {
+    "State": "Lakshadweep",
+    "Confirmed": 0,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 0,
+    "LastUpdated": "26/03/20 7:19"
+  },
+  {
+    "State": "Meghalaya",
+    "Confirmed": 0,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 0,
+    "LastUpdated": "26/03/20 7:19"
+  },
+  {
+    "State": "Nagaland",
+    "Confirmed": 0,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 0,
+    "LastUpdated": "26/03/20 7:19"
+  },
+  {
+    "State": "Sikkim",
+    "Confirmed": 0,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 0,
+    "LastUpdated": "26/03/20 7:19"
+  },
+  {
+    "State": "Tripura",
+    "Confirmed": 0,
+    "Recovered": 0,
+    "Deaths": 0,
+    "Active": 0,
+    "LastUpdated": "26/03/20 7:19"
+  }
+]

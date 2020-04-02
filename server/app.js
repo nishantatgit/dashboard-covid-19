@@ -36,6 +36,7 @@ app.get('/', function(req, res) {
 // read the json data once before starting the server
 
 let data = fs.readFileSync(`./data/covid19india.json`, 'utf-8');
+let stateJSON = fs.readFileSync(`./data/covid19states.json`, 'utf-8');
 data = data && JSON.parse(data);
 const stateWiseData = {};
 const stateData = data.forEach(node => {
@@ -60,8 +61,19 @@ const stateData = data.forEach(node => {
 
 console.log('stateWiseData ', stateWiseData);
 
+let stateObj = JSON.parse(stateJSON);
+let states = stateObj.map(v => ({
+  State: v.State,
+  Deaths: v.Deaths,
+  Recovered: v.Recovered,
+  Active: v.Active,
+  Confirmed: v.Confirmed
+}));
 //console.log('data ', data);
-const html = template(lang, dir, { data, stateWiseData });
+const html = template(lang, dir, {
+  data,
+  stateWiseData: states
+});
 
 app.listen(port);
 

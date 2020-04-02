@@ -1,7 +1,13 @@
 body {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: auto;
 }
 
-.table-container {
+.flex-container {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }

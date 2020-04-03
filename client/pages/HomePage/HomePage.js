@@ -45,7 +45,7 @@ class HomePage extends React.Component {
           <BarChart
             data={values
               .sort((a, b) => b['Confirmed'] - a['Confirmed'])
-              .slice(0, 5)}
+              .slice(0, 7)}
           ></BarChart>
         )}
       </div>

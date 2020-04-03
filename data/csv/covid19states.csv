@@ -1,0 +1,38 @@
+State,Confirmed,Recovered,Deaths,Active,LastUpdated,StateCode
+Maharashtra,423,42,21,360,02/04/20 22:53,MH
+Tamil Nadu,309,6,1,302,02/04/20 18:12,TN
+Delhi,293,8,4,281,03/04/20 0:38,DL
+Kerala,286,28,2,256,02/04/20 18:57,KL
+Andhra Pradesh,161,2,0,159,02/04/20 22:32,AP
+Rajasthan,154,3,0,151,03/04/20 9:22,RJ
+Telangana,154,17,9,128,02/04/20 21:37,TG
+Uttar Pradesh,172,17,2,153,03/04/20 8:52,UP
+Karnataka,125,11,3,111,03/04/20 13:02,KA
+Madhya Pradesh,107,0,8,99,02/04/20 21:27,MP
+Gujarat,95,10,8,77,02/04/20 22:14,GJ
+Jammu and Kashmir,70,3,2,65,02/04/20 17:57,JK
+West Bengal,53,3,6,44,02/04/20 18:32,WB
+Haryana,57,27,0,30,03/04/20 13:12,HR
+Punjab,47,1,5,41,02/04/20 21:02,PB
+Bihar,29,3,1,25,02/04/20 18:02,BR
+Chandigarh,18,0,0,18,02/04/20 18:57,CH
+Assam,16,0,0,16,02/04/20 9:42,AS
+Ladakh,13,3,0,10,27/03/20 11:52,LA
+Andaman and Nicobar Islands,10,0,0,10,30/03/20 11:27,AN
+Uttarakhand,10,2,0,8,02/04/20 22:53,UT
+Chhattisgarh,9,3,0,6,31/03/20 23:07,CT
+Goa,6,0,0,6,03/04/20 10:22,GA
+Himachal Pradesh,6,1,1,4,02/04/20 22:42,HP
+Odisha,5,2,0,3,03/04/20 10:22,OR
+Puducherry,5,0,0,5,03/04/20 2:37,PY
+Jharkhand,2,0,0,2,02/04/20 19:42,JH
+Manipur,2,0,0,2,02/04/20 9:42,MN
+Mizoram,1,0,0,1,26/03/20 7:19,MZ
+Arunachal Pradesh,1,0,0,1,02/04/20 11:42,AR
+Dadra and Nagar Haveli,0,0,0,0,26/03/20 7:19,DN
+Daman and Diu,0,0,0,0,26/03/20 7:19,DD
+Lakshadweep,0,0,0,0,26/03/20 7:19,LD
+Meghalaya,0,0,0,0,26/03/20 7:19,ML
+Nagaland,0,0,0,0,26/03/20 7:19,NL
+Sikkim,0,0,0,0,26/03/20 7:19,SK
+Tripura,0,0,0,0,26/03/20 7:19,TR

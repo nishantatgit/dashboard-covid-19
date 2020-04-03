@@ -32,6 +32,7 @@ D3Barchart.create = (el, data, configuration) => {
     .domain([0, data[0].data])
     .range([padding, chartHeight - padding]);
 
+  window.yScale = yScale;
   // const yAxisScale = d3
   //   .scaleLinear()
   //   .domain([0, data[0].data])
@@ -51,9 +52,9 @@ D3Barchart.create = (el, data, configuration) => {
       return xScale(d.labelText);
     })
     .attr('y', (d, i) => {
-      return chartHeight - yScale(d.data) - padding;
+      return chartHeight - yScale(d.data);
     })
-    .attr('height', d => yScale(d.data));
+    .attr('height', d => yScale(d.data) - padding);
 
   bar
     .append('g')
@@ -67,7 +68,7 @@ D3Barchart.create = (el, data, configuration) => {
       return xScale(d.labelText) + xScale.bandwidth() / 2;
     })
     .attr('y', d => {
-      return chartHeight - yScale(d.data) + 20 - padding;
+      return chartHeight - yScale(d.data) + 20;
     });
 
   const xAxis = d3.axisBottom(xScale);

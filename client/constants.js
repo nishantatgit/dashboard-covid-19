@@ -3,13 +3,13 @@ const svgWidth = 800;
 export const SVG = {
   height: svgHeight,
   width: svgWidth,
-  padding: 100,
+  padding: 95,
   fill: '#61808c',
   spaceTop: 50,
   viewBox: `0 0 ${svgWidth} ${svgHeight}`, //min-x, min-y, width and height
   BAR: {
     spaceBetween: 10,
-    paddingInner: 0.15
+    paddingInner: 0.2
   }
 };
 

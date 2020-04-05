@@ -1,111 +1,171 @@
 [
   {
     "State": "Maharashtra",
-    "Confirmed": 423,
-    "Recovered": 42,
-    "Deaths": 21,
-    "Active": 360,
-    "LastUpdated": "02/04/20 22:53",
-    "StateCode": "MH"
+    "Confirmed": 537,
+    "Recovered": 50,
+    "Deaths": 32,
+    "Active": 455,
+    "LastUpdated": "04/04/20 23:29",
+    "StateCode": "MH",
+    "DeltaConfirmed": 47,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 6
   },
   {
     "State": "Tamil Nadu",
-    "Confirmed": 309,
+    "Confirmed": 485,
     "Recovered": 6,
-    "Deaths": 1,
-    "Active": 302,
-    "LastUpdated": "02/04/20 18:12",
-    "StateCode": "TN"
+    "Deaths": 3,
+    "Active": 476,
+    "LastUpdated": "04/04/20 23:11",
+    "StateCode": "TN",
+    "DeltaConfirmed": 74,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 2
   },
   {
     "State": "Delhi",
-    "Confirmed": 293,
+    "Confirmed": 445,
     "Recovered": 8,
-    "Deaths": 4,
-    "Active": 281,
-    "LastUpdated": "03/04/20 0:38",
-    "StateCode": "DL"
+    "Deaths": 6,
+    "Active": 431,
+    "LastUpdated": "04/04/20 17:47",
+    "StateCode": "DL",
+    "DeltaConfirmed": 59,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Kerala",
-    "Confirmed": 286,
-    "Recovered": 28,
+    "Confirmed": 306,
+    "Recovered": 50,
     "Deaths": 2,
-    "Active": 256,
-    "LastUpdated": "02/04/20 18:57",
-    "StateCode": "KL"
-  },
-  {
-    "State": "Andhra Pradesh",
-    "Confirmed": 161,
-    "Recovered": 2,
-    "Deaths": 0,
-    "Active": 159,
-    "LastUpdated": "02/04/20 22:32",
-    "StateCode": "AP"
-  },
-  {
-    "State": "Rajasthan",
-    "Confirmed": 154,
-    "Recovered": 3,
-    "Deaths": 0,
-    "Active": 151,
-    "LastUpdated": "03/04/20 9:22",
-    "StateCode": "RJ"
+    "Active": 254,
+    "LastUpdated": "04/04/20 18:22",
+    "StateCode": "KL",
+    "DeltaConfirmed": 11,
+    "DeltaRecovered": 8,
+    "DeltaDeath": 0
   },
   {
     "State": "Telangana",
-    "Confirmed": 154,
-    "Recovered": 17,
-    "Deaths": 9,
-    "Active": 128,
-    "LastUpdated": "02/04/20 21:37",
-    "StateCode": "TG"
+    "Confirmed": 229,
+    "Recovered": 32,
+    "Deaths": 11,
+    "Active": 186,
+    "LastUpdated": "03/04/20 20:27",
+    "StateCode": "TG",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Uttar Pradesh",
-    "Confirmed": 172,
-    "Recovered": 17,
+    "Confirmed": 234,
+    "Recovered": 21,
     "Deaths": 2,
-    "Active": 153,
-    "LastUpdated": "03/04/20 8:52",
-    "StateCode": "UP"
+    "Active": 211,
+    "LastUpdated": "04/04/20 21:43",
+    "StateCode": "UP",
+    "DeltaConfirmed": 60,
+    "DeltaRecovered": 4,
+    "DeltaDeath": 0
   },
   {
-    "State": "Karnataka",
-    "Confirmed": 125,
-    "Recovered": 11,
-    "Deaths": 3,
-    "Active": 111,
-    "LastUpdated": "03/04/20 13:02",
-    "StateCode": "KA"
+    "State": "Rajasthan",
+    "Confirmed": 200,
+    "Recovered": 25,
+    "Deaths": 1,
+    "Active": 174,
+    "LastUpdated": "04/04/20 23:56",
+    "StateCode": "RJ",
+    "DeltaConfirmed": 21,
+    "DeltaRecovered": 22,
+    "DeltaDeath": 1
+  },
+  {
+    "State": "Andhra Pradesh",
+    "Confirmed": 190,
+    "Recovered": 2,
+    "Deaths": 1,
+    "Active": 187,
+    "LastUpdated": "03/04/20 23:32",
+    "StateCode": "AP",
+    "DeltaConfirmed": 26,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Madhya Pradesh",
-    "Confirmed": 107,
+    "Confirmed": 179,
     "Recovered": 0,
-    "Deaths": 8,
-    "Active": 99,
-    "LastUpdated": "02/04/20 21:27",
-    "StateCode": "MP"
+    "Deaths": 11,
+    "Active": 168,
+    "LastUpdated": "04/04/20 23:57",
+    "StateCode": "MP",
+    "DeltaConfirmed": 25,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 3
+  },
+  {
+    "State": "Karnataka",
+    "Confirmed": 144,
+    "Recovered": 11,
+    "Deaths": 4,
+    "Active": 129,
+    "LastUpdated": "04/04/20 17:37",
+    "StateCode": "KA",
+    "DeltaConfirmed": 16,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Gujarat",
-    "Confirmed": 95,
+    "Confirmed": 108,
     "Recovered": 10,
-    "Deaths": 8,
-    "Active": 77,
-    "LastUpdated": "02/04/20 22:14",
-    "StateCode": "GJ"
+    "Deaths": 10,
+    "Active": 88,
+    "LastUpdated": "04/04/20 20:06",
+    "StateCode": "GJ",
+    "DeltaConfirmed": 13,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 1
   },
   {
     "State": "Jammu and Kashmir",
-    "Confirmed": 70,
+    "Confirmed": 92,
     "Recovered": 3,
     "Deaths": 2,
-    "Active": 65,
-    "LastUpdated": "02/04/20 17:57",
-    "StateCode": "JK"
+    "Active": 87,
+    "LastUpdated": "04/04/20 17:52",
+    "StateCode": "JK",
+    "DeltaConfirmed": 17,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
+  },
+  {
+    "State": "Haryana",
+    "Confirmed": 84,
+    "Recovered": 28,
+    "Deaths": 0,
+    "Active": 56,
+    "LastUpdated": "04/04/20 18:37",
+    "StateCode": "HR",
+    "DeltaConfirmed": 26,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
+  },
+  {
+    "State": "Punjab",
+    "Confirmed": 65,
+    "Recovered": 3,
+    "Deaths": 5,
+    "Active": 57,
+    "LastUpdated": "04/04/20 19:40",
+    "StateCode": "PB",
+    "DeltaConfirmed": 12,
+    "DeltaRecovered": 2,
+    "DeltaDeath": 0
   },
   {
     "State": "West Bengal",
@@ -114,34 +174,58 @@
     "Deaths": 6,
     "Active": 44,
     "LastUpdated": "02/04/20 18:32",
-    "StateCode": "WB"
-  },
-  {
-    "State": "Haryana",
-    "Confirmed": 57,
-    "Recovered": 27,
-    "Deaths": 0,
-    "Active": 30,
-    "LastUpdated": "03/04/20 13:12",
-    "StateCode": "HR"
-  },
-  {
-    "State": "Punjab",
-    "Confirmed": 47,
-    "Recovered": 1,
-    "Deaths": 5,
-    "Active": 41,
-    "LastUpdated": "02/04/20 21:02",
-    "StateCode": "PB"
+    "StateCode": "WB",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Bihar",
-    "Confirmed": 29,
+    "Confirmed": 32,
     "Recovered": 3,
     "Deaths": 1,
+    "Active": 28,
+    "LastUpdated": "04/04/20 20:06",
+    "StateCode": "BR",
+    "DeltaConfirmed": 1,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
+  },
+  {
+    "State": "Assam",
+    "Confirmed": 25,
+    "Recovered": 0,
+    "Deaths": 0,
     "Active": 25,
-    "LastUpdated": "02/04/20 18:02",
-    "StateCode": "BR"
+    "LastUpdated": "04/04/20 14:37",
+    "StateCode": "AS",
+    "DeltaConfirmed": 2,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
+  },
+  {
+    "State": "Uttarakhand",
+    "Confirmed": 22,
+    "Recovered": 2,
+    "Deaths": 0,
+    "Active": 20,
+    "LastUpdated": "04/04/20 18:02",
+    "StateCode": "UT",
+    "DeltaConfirmed": 6,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
+  },
+  {
+    "State": "Odisha",
+    "Confirmed": 20,
+    "Recovered": 2,
+    "Deaths": 0,
+    "Active": 18,
+    "LastUpdated": "03/04/20 23:42",
+    "StateCode": "OR",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Chandigarh",
@@ -150,25 +234,22 @@
     "Deaths": 0,
     "Active": 18,
     "LastUpdated": "02/04/20 18:57",
-    "StateCode": "CH"
-  },
-  {
-    "State": "Assam",
-    "Confirmed": 16,
-    "Recovered": 0,
-    "Deaths": 0,
-    "Active": 16,
-    "LastUpdated": "02/04/20 9:42",
-    "StateCode": "AS"
+    "StateCode": "CH",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Ladakh",
-    "Confirmed": 13,
+    "Confirmed": 14,
     "Recovered": 3,
     "Deaths": 0,
-    "Active": 10,
+    "Active": 11,
     "LastUpdated": "27/03/20 11:52",
-    "StateCode": "LA"
+    "StateCode": "LA",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Andaman and Nicobar Islands",
@@ -177,52 +258,46 @@
     "Deaths": 0,
     "Active": 10,
     "LastUpdated": "30/03/20 11:27",
-    "StateCode": "AN"
-  },
-  {
-    "State": "Uttarakhand",
-    "Confirmed": 10,
-    "Recovered": 2,
-    "Deaths": 0,
-    "Active": 8,
-    "LastUpdated": "02/04/20 22:53",
-    "StateCode": "UT"
+    "StateCode": "AN",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Chhattisgarh",
-    "Confirmed": 9,
+    "Confirmed": 10,
     "Recovered": 3,
     "Deaths": 0,
-    "Active": 6,
-    "LastUpdated": "31/03/20 23:07",
-    "StateCode": "CT"
+    "Active": 7,
+    "LastUpdated": "04/04/20 15:57",
+    "StateCode": "CT",
+    "DeltaConfirmed": 1,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Goa",
-    "Confirmed": 6,
+    "Confirmed": 7,
     "Recovered": 0,
     "Deaths": 0,
-    "Active": 6,
-    "LastUpdated": "03/04/20 10:22",
-    "StateCode": "GA"
+    "Active": 7,
+    "LastUpdated": "04/04/20 9:42",
+    "StateCode": "GA",
+    "DeltaConfirmed": 1,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Himachal Pradesh",
     "Confirmed": 6,
     "Recovered": 1,
-    "Deaths": 1,
-    "Active": 4,
-    "LastUpdated": "02/04/20 22:42",
-    "StateCode": "HP"
-  },
-  {
-    "State": "Odisha",
-    "Confirmed": 5,
-    "Recovered": 2,
-    "Deaths": 0,
+    "Deaths": 2,
     "Active": 3,
-    "LastUpdated": "03/04/20 10:22",
-    "StateCode": "OR"
+    "LastUpdated": "03/04/20 17:17",
+    "StateCode": "HP",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Puducherry",
@@ -231,7 +306,10 @@
     "Deaths": 0,
     "Active": 5,
     "LastUpdated": "03/04/20 2:37",
-    "StateCode": "PY"
+    "StateCode": "PY",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Jharkhand",
@@ -240,7 +318,10 @@
     "Deaths": 0,
     "Active": 2,
     "LastUpdated": "02/04/20 19:42",
-    "StateCode": "JH"
+    "StateCode": "JH",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Manipur",
@@ -249,7 +330,10 @@
     "Deaths": 0,
     "Active": 2,
     "LastUpdated": "02/04/20 9:42",
-    "StateCode": "MN"
+    "StateCode": "MN",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Mizoram",
@@ -258,7 +342,10 @@
     "Deaths": 0,
     "Active": 1,
     "LastUpdated": "26/03/20 7:19",
-    "StateCode": "MZ"
+    "StateCode": "MZ",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Arunachal Pradesh",
@@ -267,7 +354,10 @@
     "Deaths": 0,
     "Active": 1,
     "LastUpdated": "02/04/20 11:42",
-    "StateCode": "AR"
+    "StateCode": "AR",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Dadra and Nagar Haveli",
@@ -276,7 +366,10 @@
     "Deaths": 0,
     "Active": 0,
     "LastUpdated": "26/03/20 7:19",
-    "StateCode": "DN"
+    "StateCode": "DN",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Daman and Diu",
@@ -285,7 +378,10 @@
     "Deaths": 0,
     "Active": 0,
     "LastUpdated": "26/03/20 7:19",
-    "StateCode": "DD"
+    "StateCode": "DD",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Lakshadweep",
@@ -294,7 +390,10 @@
     "Deaths": 0,
     "Active": 0,
     "LastUpdated": "26/03/20 7:19",
-    "StateCode": "LD"
+    "StateCode": "LD",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Meghalaya",
@@ -303,7 +402,10 @@
     "Deaths": 0,
     "Active": 0,
     "LastUpdated": "26/03/20 7:19",
-    "StateCode": "ML"
+    "StateCode": "ML",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Nagaland",
@@ -312,7 +414,10 @@
     "Deaths": 0,
     "Active": 0,
     "LastUpdated": "26/03/20 7:19",
-    "StateCode": "NL"
+    "StateCode": "NL",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Sikkim",
@@ -321,7 +426,10 @@
     "Deaths": 0,
     "Active": 0,
     "LastUpdated": "26/03/20 7:19",
-    "StateCode": "SK"
+    "StateCode": "SK",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   },
   {
     "State": "Tripura",
@@ -329,7 +437,10 @@
     "Recovered": 0,
     "Deaths": 0,
     "Active": 0,
-    "LastUpdated": "26/03/20 7:19",
-    "StateCode": "TR"
+    "LastUpdated": "",
+    "StateCode": "",
+    "DeltaConfirmed": 0,
+    "DeltaRecovered": 0,
+    "DeltaDeath": 0
   }
 ]

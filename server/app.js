@@ -13,11 +13,11 @@ app.use(express.static('./public'));
 
 app.use(
   bodyParser.urlencoded({
-    extended: true
+    extended: true,
   })
 );
 
-app.all('/*', function(req, res, next) {
+app.all('/*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header(
@@ -27,7 +27,7 @@ app.all('/*', function(req, res, next) {
   next();
 });
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   console.log('request recieved...');
   res.statusCode = 200;
   res.send(html);
@@ -37,9 +37,10 @@ app.get('/', function(req, res) {
 
 let data = fs.readFileSync(`./data/covid19india.json`, 'utf-8');
 let stateJSON = fs.readFileSync(`./data/covid19states.json`, 'utf-8');
+let stateGeoJSON = fs.readFileSync(`./data/geojson/india_state.json`, 'utf-8');
 data = data && JSON.parse(data);
 const stateWiseData = {};
-const stateData = data.forEach(node => {
+const stateData = data.forEach((node) => {
   // current state values --> Recovered, Hospitalized, Deceased
   const currentState = node['Detected State'];
   if (!stateWiseData[currentState]) {
@@ -48,7 +49,7 @@ const stateData = data.forEach(node => {
       Recovered: 0,
       Hospitalized: 0,
       Deceased: 0,
-      'Total Cases': 0
+      'Total Cases': 0,
     };
   }
 
@@ -59,20 +60,22 @@ const stateData = data.forEach(node => {
   stateWiseData[currentState] = currentStateData;
 });
 
-console.log('stateWiseData ', stateWiseData);
+//console.log('stateWiseData ', stateWiseData);
 
 let stateObj = JSON.parse(stateJSON);
-let states = stateObj.map(v => ({
+let states = stateObj.map((v) => ({
   State: v.State,
   Deaths: v.Deaths,
   Recovered: v.Recovered,
   Active: v.Active,
-  Confirmed: v.Confirmed
+  Confirmed: v.Confirmed,
 }));
 //console.log('data ', data);
+//console.log('geoJSON', stateGeoJSON);
 const html = template(lang, dir, {
   data,
-  stateWiseData: states
+  stateWiseData: states,
+  stateGeoObj: JSON.parse(stateGeoJSON),
 });
 
 app.listen(port);

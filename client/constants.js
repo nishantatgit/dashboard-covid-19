@@ -22,5 +22,5 @@ export const COLORS = {
   white: '#ffffff',
   black: '#000000',
 
-  choropleth: ['#f0f9e8', '#bae4bc', '#7bccc4', '#43a2ca', '#0868ac'],
+  choropleth: ['#f0f9e8', '#bae4bc', '#7bccc4', '#43a2ca'],
 };

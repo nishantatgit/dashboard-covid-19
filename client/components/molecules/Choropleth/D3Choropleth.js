@@ -19,6 +19,7 @@ D3Choropleth.create = (el, data, configuration) => {
     .append('svg')
     .attr('viewBox', viewBox);
   const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geoJSON);
+
   const path = d3.geoPath().projection(projection);
   console.log('path ', path);
   choropleth
@@ -27,7 +28,8 @@ D3Choropleth.create = (el, data, configuration) => {
     .enter()
     .append('path')
     .attr('d', path)
-    .attr('fill', (d) => {
+    .attr('fill', (d, i) => {
+      console.log('d ', d);
       const confirmed = d.properties.Confirmed;
       return confirmed ? (() => color(confirmed))() : '#ddd';
     })
@@ -38,7 +40,7 @@ D3Choropleth.create = (el, data, configuration) => {
     features.forEach((feature) => {
       console.log('feature.properties.NAME_1', feature.properties.NAME_1);
       const correspondingData = data.filter(
-        (item) => item.State === feature.properties.NAME_1
+        (item) => item.State === feature.properties.name
       )[0];
       console.log('correspondingData ', correspondingData);
       feature.properties.Confirmed =

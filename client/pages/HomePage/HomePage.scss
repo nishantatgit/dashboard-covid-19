@@ -10,4 +10,20 @@ body {
   @media (min-width: 768px) {
     flex-direction: row;
   }
+
+  .svg-container {
+    width: 90%;
+    margin: auto;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+
+  .table-container {
+    width: 90%;
+    margin: auto;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
 }

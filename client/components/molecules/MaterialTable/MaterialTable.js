@@ -1,5 +1,6 @@
 import MaterialTable from 'material-table';
 import { Paper } from '@material-ui/core';
+import './MaterialTable.scss';
 
 import React, { useState } from 'react';
 
@@ -9,28 +10,26 @@ export default function Table({ states, values, headers, options = {} }) {
     pageSize: 15,
     headerStyle: {
       backgroundColor: '#013440',
-      color: '#FFF'
+      color: '#FFF',
     },
     paging: false,
-    draggable: false
+    draggable: false,
   };
 
   const updatedOptions = { ...defaultOptions, ...options };
-  const colHeaders = headers.map(header => ({
+  const colHeaders = headers.map((header) => ({
     title: header,
-    field: header
+    field: header,
   }));
   return (
-    <section className="table-container">
-      <MaterialTable
-        columns={colHeaders}
-        data={values}
-        title="Statewise disease spread"
-        options={updatedOptions}
-        components={{
-          Container: props => <Paper {...props} elevation={0} />
-        }}
-      ></MaterialTable>
-    </section>
+    <MaterialTable
+      columns={colHeaders}
+      data={values}
+      title="Statewise disease spread"
+      options={updatedOptions}
+      components={{
+        Container: (props) => <Paper {...props} elevation={0} />,
+      }}
+    ></MaterialTable>
   );
 }

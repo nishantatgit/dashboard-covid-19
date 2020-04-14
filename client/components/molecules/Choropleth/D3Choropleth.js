@@ -4,15 +4,14 @@ const D3Choropleth = {};
 import { SVG, COLORS } from '../../../constants';
 
 D3Choropleth.create = (el, data, configuration) => {
-  const { statesData, geoJSON } = data;
+  const { geoData, geoJSON } = data;
   const { features } = geoJSON;
-  const updatedFeatures = injectDataToFeatures(features, statesData);
+  const updatedFeatures = injectDataToFeatures(features, geoData);
   const { height: mapHeight, width: mapWidth, viewBox } = SVG;
-  const color = d3.scaleQuantize().range(COLORS.choropleth).domain([0, 537]);
-  console.log(
-    'statesData[statesData.length - 1].Confirmed',
-    statesData[statesData.length - 1].Confirmed
-  );
+  const color = d3
+    .scaleQuantize()
+    .range(COLORS.choropleth)
+    .domain([0, geoData[0].Confirmed]);
   window.color = color;
   const choropleth = d3
     .select(el.current)
@@ -21,7 +20,6 @@ D3Choropleth.create = (el, data, configuration) => {
   const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geoJSON);
 
   const path = d3.geoPath().projection(projection);
-  console.log('path ', path);
   choropleth
     .selectAll('path')
     .data(updatedFeatures)

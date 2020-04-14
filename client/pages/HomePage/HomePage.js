@@ -46,7 +46,7 @@ class HomePage extends React.Component {
         </section>
         {stateData && (
           <section className="svg-container">
-            <Choropleth data={{ statesData: values, geoJSON }}></Choropleth>
+            <Choropleth data={{ geoData: values, geoJSON }}></Choropleth>
             <BarChart
               data={values
                 .sort((a, b) => b['Confirmed'] - a['Confirmed'])

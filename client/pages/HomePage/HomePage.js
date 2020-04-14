@@ -45,7 +45,7 @@ class HomePage extends React.Component {
           )}
         </section>
         {stateData && (
-          <section>
+          <section className="svg-container">
             <Choropleth data={{ statesData: values, geoJSON }}></Choropleth>
             <BarChart
               data={values

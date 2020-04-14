@@ -32,6 +32,11 @@ class HomePage extends React.Component {
       stateData && Object.values(stateData).filter((val) => !!val.State);
     const headers =
       stateData && values.length && values[0] && Object.keys(values[0]);
+
+    const geoData = {
+      key: 'name',
+      data: [...values.map((v) => ({ ...v, name: v.State }))],
+    };
     return (
       <div className="flex-container">
         <section className="table-container">
@@ -46,7 +51,7 @@ class HomePage extends React.Component {
         </section>
         {stateData && (
           <section className="svg-container">
-            <Choropleth data={{ geoData: values, geoJSON }}></Choropleth>
+            <Choropleth data={{ geoData, geoJSON }}></Choropleth>
             <BarChart
               data={values
                 .sort((a, b) => b['Confirmed'] - a['Confirmed'])

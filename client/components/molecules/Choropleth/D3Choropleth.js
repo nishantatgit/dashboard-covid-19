@@ -34,17 +34,20 @@ D3Choropleth.create = (el, data, configuration) => {
     .attr('stroke', COLORS.white)
     .attr('stroke-width', 0.5);
 
-  function injectDataToFeatures(features, data) {
+  function injectDataToFeatures(features, geoData) {
+    const { key, data } = geoData;
     features.forEach((feature) => {
       console.log('feature.properties.NAME_1', feature.properties.NAME_1);
       const correspondingData = data.filter(
-        (item) => item.State === feature.properties.name
+        (item) => item[key] === feature.properties[key]
       )[0];
+
+      var dataKeys = Object.keys(correspondingData);
+
+      dataKeys.forEach(
+        (key) => (feature.properties[key] = correspondingData[key])
+      );
       console.log('correspondingData ', correspondingData);
-      feature.properties.Confirmed =
-        correspondingData && correspondingData.Confirmed;
-      feature.properties.Active = correspondingData && correspondingData.Active;
-      feature.properties.Deaths = correspondingData && correspondingData.Deaths;
     });
     return features;
   }

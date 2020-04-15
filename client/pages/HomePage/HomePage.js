@@ -33,8 +33,9 @@ class HomePage extends React.Component {
     const headers =
       stateData && values.length && values[0] && Object.keys(values[0]);
 
-    const geoData = {
-      key: 'name',
+    const geoData = values && {
+      geoKey: 'name',
+      key: 'Confirmed',
       data: [...values.map((v) => ({ ...v, name: v.State }))],
     };
     return (

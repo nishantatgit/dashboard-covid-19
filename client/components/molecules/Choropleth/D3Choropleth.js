@@ -11,8 +11,8 @@ D3Choropleth.create = (el, data, configuration) => {
   const color = d3
     .scaleQuantize()
     .range(COLORS.choropleth)
-    .domain([0, geoData[0].Confirmed]);
-  window.color = color;
+    .domain([0, geoData.data[0][geoData.key]]);
+
   const choropleth = d3
     .select(el.current)
     .append('svg')
@@ -35,18 +35,20 @@ D3Choropleth.create = (el, data, configuration) => {
     .attr('stroke-width', 0.5);
 
   function injectDataToFeatures(features, geoData) {
-    const { key, data } = geoData;
+    const { geoKey: key, data } = geoData;
     features.forEach((feature) => {
       console.log('feature.properties.NAME_1', feature.properties.NAME_1);
       const correspondingData = data.filter(
         (item) => item[key] === feature.properties[key]
       )[0];
 
-      var dataKeys = Object.keys(correspondingData);
+      if (correspondingData) {
+        const dataKeys = Object.keys(correspondingData);
 
-      dataKeys.forEach(
-        (key) => (feature.properties[key] = correspondingData[key])
-      );
+        dataKeys.forEach(
+          (key) => (feature.properties[key] = correspondingData[key])
+        );
+      }
       console.log('correspondingData ', correspondingData);
     });
     return features;

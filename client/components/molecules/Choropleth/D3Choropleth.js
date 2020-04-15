@@ -20,6 +20,8 @@ D3Choropleth.create = (el, data, configuration) => {
   const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geoJSON);
 
   const path = d3.geoPath().projection(projection);
+  window.path = path;
+  window.features = features;
   choropleth
     .selectAll('path')
     .data(updatedFeatures)
@@ -27,7 +29,6 @@ D3Choropleth.create = (el, data, configuration) => {
     .append('path')
     .attr('d', path)
     .attr('fill', (d, i) => {
-      console.log('d ', d);
       const confirmed = d.properties.Confirmed;
       return confirmed ? (() => color(confirmed))() : '#ddd';
     })
@@ -37,7 +38,6 @@ D3Choropleth.create = (el, data, configuration) => {
   function injectDataToFeatures(features, geoData) {
     const { geoKey: key, data } = geoData;
     features.forEach((feature) => {
-      console.log('feature.properties.NAME_1', feature.properties.NAME_1);
       const correspondingData = data.filter(
         (item) => item[key] === feature.properties[key]
       )[0];
@@ -49,7 +49,6 @@ D3Choropleth.create = (el, data, configuration) => {
           (key) => (feature.properties[key] = correspondingData[key])
         );
       }
-      console.log('correspondingData ', correspondingData);
     });
     return features;
   }

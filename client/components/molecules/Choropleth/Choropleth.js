@@ -1,8 +1,8 @@
 import React from 'react';
-import * as d3 from 'd3';
+import { geoMercator, geoPath } from 'd3-geo';
+import { scaleQuantize } from 'd3-scale';
 import './Choropleth.scss';
 import { SVG, COLORS } from '../../../constants';
-import { useEffect } from 'react';
 
 function Choropleth(props) {
   const { data } = props;
@@ -13,14 +13,12 @@ function Choropleth(props) {
   const updatedFeatures = injectDataToFeatures(features, geoData);
 
   // generate color scale
-  const color = d3
-    .scaleQuantize()
+  const color = scaleQuantize()
     .range(COLORS.choropleth)
     .domain([0, geoData.data[0][geoData.key]]);
 
-  const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geoJSON);
-
-  const pathFunc = d3.geoPath().projection(projection);
+  const projection = geoMercator().fitSize([mapWidth, mapHeight], geoJSON);
+  const pathFunc = geoPath().projection(projection);
 
   return (
     <section className="choropleth-map-container">

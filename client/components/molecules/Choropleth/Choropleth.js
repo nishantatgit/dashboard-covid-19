@@ -8,18 +8,23 @@ function Choropleth(props) {
   const { data } = props;
   const { geoData, geoJSON } = data;
   const { features } = geoJSON;
-  const { height: mapHeight, width: mapWidth, viewBox } = SVG;
+
+  const { height: mapHeight, width: mapWidth, viewBox, strokeWidth } = SVG;
   const updatedFeatures = injectDataToFeatures(features, geoData);
 
+  // generate color scale
   const color = d3
     .scaleQuantize()
     .range(COLORS.choropleth)
     .domain([0, geoData.data[0][geoData.key]]);
+
   const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geoJSON);
+
   const pathFunc = d3.geoPath().projection(projection);
+
   return (
     <section className="choropleth-map-container">
-      <svg viewBox={viewBox} stroke={COLORS.white} strokeWidth={0.5}>
+      <svg viewBox={viewBox} stroke={COLORS.white} strokeWidth={strokeWidth}>
         {drawMap()}
       </svg>
     </section>

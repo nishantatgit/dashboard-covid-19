@@ -57,19 +57,22 @@ function transformerUSCountyToJSON(data) {
 }
 
 const filePaths = [
-  '../data/csv/covid19uscounties',
-  '../data/csv/covid19usstates',
+  {
+    input: '../data/csv/covid19uscounties.csv',
+    output: '../data/json/covid19uscounties.json',
+  },
+  {
+    input: '../data/csv/covid19usstates.csv',
+    output: '../data/json/covid19usstates.json',
+  },
 ];
-
-const inputFormat = 'csv';
-const outputFormat = 'json';
 
 const transformer = [transformerUSCountyToJSON, transformerUSStateToJSON];
 
 async function getJson(transformer) {
   filePaths.forEach(async function test(file, index) {
-    const inFile = `${__dirname}/${file}.${inputFormat}`;
-    const outFile = `${__dirname}/${file}.${outputFormat}`;
+    const inFile = `${__dirname}/${file.input}`;
+    const outFile = `${__dirname}/${file.output}`;
 
     let jsonArray = await csvToJson().fromFile(inFile);
 

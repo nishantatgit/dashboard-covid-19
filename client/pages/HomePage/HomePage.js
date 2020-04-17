@@ -42,28 +42,33 @@ class HomePage extends React.Component {
     const usData = data && data.usData;
     console.log('usData --- ', usData);
     return (
-      <div className="flex-container">
-        <section className="table-container">
-          {stateData && (
-            <MaterialTable
-              states={states}
-              values={values}
-              headers={headers}
-              options={{ pageSize: 30 }}
-            ></MaterialTable>
-          )}
-        </section>
-        {stateData && (
-          <section className="svg-container">
-            <Choropleth data={{ geoData, geoJSON }}></Choropleth>
-            <BarChart
-              data={values
-                .sort((a, b) => b['Confirmed'] - a['Confirmed'])
-                .slice(0, 7)}
-            ></BarChart>
+      <>
+        <div className="flex-container">
+          <section className="table-container">
+            {stateData && (
+              <MaterialTable
+                states={states}
+                values={values}
+                headers={headers}
+                options={{ pageSize: 30 }}
+              ></MaterialTable>
+            )}
           </section>
-        )}
-      </div>
+          {stateData && (
+            <section className="svg-container">
+              <Choropleth data={{ geoData, geoJSON }}></Choropleth>
+              <BarChart
+                data={values
+                  .sort((a, b) => b['Confirmed'] - a['Confirmed'])
+                  .slice(0, 7)}
+              ></BarChart>
+            </section>
+          )}
+        </div>
+        <a href="/usa" title="COVID in USA">
+          Covid in USA
+        </a>
+      </>
     );
   }
 }

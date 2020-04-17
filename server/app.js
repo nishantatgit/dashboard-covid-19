@@ -9,6 +9,7 @@ import * as d3 from 'd3';
 const app = express();
 const { port, lang, dir } = configs;
 
+let scriptName;
 app.use(express.static('./public'));
 
 app.use(
@@ -29,8 +30,16 @@ app.all('/*', function (req, res, next) {
 
 app.get('/', function (req, res) {
   console.log('request recieved...');
+  scriptName = 'client';
   res.statusCode = 200;
-  res.send(html);
+  res.send(getHtml('client'));
+});
+
+app.get('/usa', function (req, res) {
+  console.log('request recieved for usa');
+  scriptName = 'america';
+  res.statusCode = 200;
+  res.send(getHtml('america'));
 });
 
 // read the json data once before starting the server
@@ -73,12 +82,16 @@ let states = stateObj.map((v) => ({
 }));
 //console.log('data ', data);
 //console.log('geoJSON', stateGeoJSON);
-const html = template(lang, dir, {
-  data,
-  stateWiseData: states,
-  stateGeoObj: JSON.parse(stateGeoJSON),
-  usData: JSON.parse(usData),
-});
+function getHtml(scriptName) {
+  const html = template(lang, dir, scriptName, {
+    data,
+    stateWiseData: states,
+    stateGeoObj: JSON.parse(stateGeoJSON),
+    usData: JSON.parse(usData),
+  });
+
+  return html;
+}
 
 app.listen(port);
 

@@ -1,4 +1,4 @@
-export default (lang, dir, data) => `<!doctype html>
+export default (lang, dir, scriptName, data) => `<!doctype html>
 <html lang="${lang}" dir="${dir}">
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,6 @@ export default (lang, dir, data) => `<!doctype html>
     <div id="react-app"></div>
     <script> window.__NX__ = ${JSON.stringify(data)}</script>
     <script src="vendor.js"></script>
-    <script src="client.js"></script>
+    <script src="${scriptName}.js"></script>
   </body>
 </html>`;

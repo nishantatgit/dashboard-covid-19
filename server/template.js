@@ -12,6 +12,7 @@ export default (lang, dir, data) => `<!doctype html>
   <body>
     <div id="react-app"></div>
     <script> window.__NX__ = ${JSON.stringify(data)}</script>
+    <script src="vendor.js"></script>
     <script src="client.js"></script>
   </body>
 </html>`;

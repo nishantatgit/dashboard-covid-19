@@ -38,6 +38,7 @@ app.get('/', function (req, res) {
 let data = fs.readFileSync(`./data/covid19india.json`, 'utf-8');
 let stateJSON = fs.readFileSync(`./data/covid19states.json`, 'utf-8');
 let stateGeoJSON = fs.readFileSync(`./data/geojson/india_test.json`, 'utf-8');
+let usData = fs.readFileSync(`./data/json/covid19usstates.json`, 'utf-8');
 data = data && JSON.parse(data);
 const stateWiseData = {};
 const stateData = data.forEach((node) => {
@@ -76,6 +77,7 @@ const html = template(lang, dir, {
   data,
   stateWiseData: states,
   stateGeoObj: JSON.parse(stateGeoJSON),
+  usData: JSON.parse(usData),
 });
 
 app.listen(port);

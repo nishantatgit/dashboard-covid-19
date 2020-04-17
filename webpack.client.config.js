@@ -1,6 +1,7 @@
 module.exports = {
   entry: {
-    client: './client/index.js',
+    client: './client/pages/HomePage/index.js',
+    america: './client/pages/HomePageUSA/index.js',
   },
   output: {
     path: __dirname + '/public',

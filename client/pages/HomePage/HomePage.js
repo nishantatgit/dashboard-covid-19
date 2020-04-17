@@ -38,6 +38,9 @@ class HomePage extends React.Component {
       key: 'Confirmed',
       data: [...values.map((v) => ({ ...v, name: v.State }))],
     };
+
+    const usData = data && data.usData;
+    console.log('usData --- ', usData);
     return (
       <div className="flex-container">
         <section className="table-container">

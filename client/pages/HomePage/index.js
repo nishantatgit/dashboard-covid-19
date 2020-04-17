@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './pages/HomePage/HomePage';
+import HomePage from './HomePage';
 
 const component = <HomePage />;
 

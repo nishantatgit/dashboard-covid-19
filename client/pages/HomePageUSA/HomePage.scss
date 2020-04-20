@@ -1,0 +1,29 @@
+body {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .svg-container {
+    width: 90%;
+    margin: auto;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+
+  .table-container {
+    width: 90%;
+    margin: auto;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+}

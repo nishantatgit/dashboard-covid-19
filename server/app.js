@@ -32,14 +32,14 @@ app.get('/', function (req, res) {
   console.log('request recieved...');
   scriptName = 'client';
   res.statusCode = 200;
-  res.send(getHtml('client'));
+  res.send(getHtml('client', homePageData));
 });
 
 app.get('/usa', function (req, res) {
   console.log('request recieved for usa');
   scriptName = 'america';
   res.statusCode = 200;
-  res.send(getHtml('america'));
+  res.send(getHtml('america', usaData));
 });
 
 // read the json data once before starting the server
@@ -48,6 +48,7 @@ let data = fs.readFileSync(`./data/covid19india.json`, 'utf-8');
 let stateJSON = fs.readFileSync(`./data/covid19states.json`, 'utf-8');
 let stateGeoJSON = fs.readFileSync(`./data/geojson/india_test.json`, 'utf-8');
 let usData = fs.readFileSync(`./data/json/covid19usstates.json`, 'utf-8');
+let usGeoData = fs.readFileSync(`./data/geojson/usa_states.json`, 'utf-8');
 data = data && JSON.parse(data);
 const stateWiseData = {};
 const stateData = data.forEach((node) => {
@@ -80,15 +81,21 @@ let states = stateObj.map((v) => ({
   Active: v.Active,
   Confirmed: v.Confirmed,
 }));
+
+const usaData = {
+  usData: JSON.parse(usData),
+  usGeoData: JSON.parse(usGeoData),
+};
+
+const homePageData = {
+  data,
+  stateWiseData: states,
+  stateGeoObj: JSON.parse(stateGeoJSON),
+};
 //console.log('data ', data);
 //console.log('geoJSON', stateGeoJSON);
-function getHtml(scriptName) {
-  const html = template(lang, dir, scriptName, {
-    data,
-    stateWiseData: states,
-    stateGeoObj: JSON.parse(stateGeoJSON),
-    usData: JSON.parse(usData),
-  });
+function getHtml(scriptName, data) {
+  const html = template(lang, dir, scriptName, data);
 
   return html;
 }

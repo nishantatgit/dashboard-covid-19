@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Choropleth from '../../components/molecules/Choropleth/Choropleth';
 import Dropdown from '../../components/atoms/Dropdown/Dropdown';
 
-import styles from './HomePage.scss';
+
 
 export default function HomePage(props) {
   const [data, setData] = useState({});

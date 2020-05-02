@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   entry: {
     client: './client/pages/HomePage/index.js',
@@ -8,20 +9,37 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.js$/,
+      //   use: ['babel-loader'],
+      //   exclude: /node_modules/
+      // },
       {
-        test: /\.js$/,
-        use: 'babel-loader',
+        test: /\.tsx$|\.ts$|\.js$/,
+        use: ['ts-loader'],
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
         use: [
           {
+            loader: 'tee-loader',
+            
+              options: { label: 'after-style-loader-@@@@@@@@@@@@@@@'}
+            
+          },
+          {
             loader: 'style-loader',
           },
           {
-            loader: 'css-loader',
+            loader: 'tee-loader',
+            
+              options: { label: 'after-css-loader-@@@@@@@@@@@@@@@'}
+            
           },
+          {
+            loader: 'css-loader',
+          },  
           {
             loader: 'sass-loader',
           },
@@ -41,4 +59,13 @@ module.exports = {
       },
     },
   },
+  resolve: {
+    // Add `.ts` and `.tsx` as a resolvable extension.
+    extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
+  },
+  resolveLoader : {
+    alias : {
+        'tee-loader' : path.resolve(__dirname, './loaders/tee-loader.js')
+    }
+  }
 };

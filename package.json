@@ -43,7 +43,9 @@
     "react-table": "^7.0.0",
     "react-table-6": "^6.11.0",
     "redux": "^4.0.1",
-    "redux-saga": "^1.0.2"
+    "redux-saga": "^1.0.2",
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "build:client": "webpack --config webpack.client.config.js --mode development",

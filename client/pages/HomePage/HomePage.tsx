@@ -4,12 +4,30 @@ import MaterialTable from '../../components/molecules/MaterialTable/MaterialTabl
 import BarChart from '../../components/molecules/Barchart/Barchart';
 import Choropleth from '../../components/molecules/Choropleth/Choropleth';
 import  './HomePage.scss';
+declare global {
+  interface Window {
+      __NX__ :any;
+  }
+}
+
+type MyState ={
+  data: {
+    stateWiseData?: {};
+    stateGeoObj?: {}
+    usData?: {}
+  };
+}
+
+type Val = {
+  State: string;
+}
+
 
 class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  state: MyState = {
+    data : {}
+  } 
+ 
   componentDidMount() {
     console.log('window.__NX__', window.__NX__);
     try {
@@ -28,15 +46,15 @@ class HomePage extends React.Component {
     const stateData = data && data.stateWiseData;
     const geoJSON = data && data.stateGeoObj;
     const states = stateData && Object.keys(stateData).filter((val) => !!val);
-    const values =
-      stateData && Object.values(stateData).filter((val) => !!val.State);
+    const values  =
+      stateData && Object.values(stateData).filter((val: Val) => !!val.State);
     const headers =
       stateData && values.length && values[0] && Object.keys(values[0]);
 
     const geoData = values && {
       geoKey: 'name',
       key: 'Confirmed',
-      data: [...values.map((v) => ({ ...v, name: v.State }))],
+      data: [...values.map((v: Val) => ({ ...v, name: v.State }))],
     };
 
     const usData = data && data.usData;

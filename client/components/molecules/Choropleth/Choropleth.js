@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { geoMercator, geoPath } from 'd3-geo';
 import { scaleQuantize } from 'd3-scale';
+import DownloadWidget from '../DownloadWidget/DownloadWidget';
 import './Choropleth.scss';
 import { SVG, COLORS } from '../../../constants';
 
@@ -13,11 +14,12 @@ function Choropleth(props) {
   const { height: mapHeight, width: mapWidth, viewBox, strokeWidth } = SVG;
   const updatedFeatures = injectDataToFeatures(features, geoData);
 
+  const svgRef = useRef(null);
+
   const maxValueObj = geoData.data.reduce(function (a, v, i, arr) {
     return a[geoData.key] > v[geoData.key] ? a : v;
   }, 1);
 
-  console.log(' maxValueObj ', maxValueObj);
   // generate color scale
   const color = scaleQuantize()
     .range(COLORS.choropleth)
@@ -27,12 +29,21 @@ function Choropleth(props) {
   const pathFunc = geoPath().projection(projection);
 
   return (
-    <section className="choropleth-map-container">
-      <svg viewBox={viewBox} stroke={COLORS.white} strokeWidth={strokeWidth}>
-        {drawMap()}
-        {drawStatesMap()}
-      </svg>
-    </section>
+    <>
+      <section className="choropleth-map-container">
+        <svg
+          ref={svgRef}
+          viewBox={viewBox}
+          stroke={COLORS.white}
+          fill="#cf5272"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {drawMap()}
+          {drawStatesMap()}
+        </svg>
+      </section>
+      <DownloadWidget svgRef={svgRef} geoName="country" />
+    </>
   );
 
   function drawMap() {
@@ -64,8 +75,6 @@ function Choropleth(props) {
   }
 
   function injectDataToFeatures(features, displayData) {
-    console.log('features -- ', features);
-    console.log('display data ', displayData);
     const { geoKey: key, data } = displayData;
     features.forEach((feature) => {
       const correspondingData = data.filter(
@@ -80,7 +89,6 @@ function Choropleth(props) {
         );
       }
     });
-    console.log('features ', features);
     return features;
   }
 }

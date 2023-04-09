@@ -14,8 +14,8 @@ type MyState = {
     key?: string;
     stateWiseData?: [];
     stateGeoObj?: {};
-    usData?: {};
     stateGeoJSON?: {};
+    stateJSONDejure?: {};
   };
 };
 
@@ -47,6 +47,7 @@ class HomePage extends React.Component {
     const stateData = data && data.stateWiseData;
     const geoJSON = data && data.stateGeoObj;
     const stateGeoJSON = data && data.stateGeoJSON;
+    const stateJSONDejure = data && data.stateJSONDejure;
     const geoKey = data && data.geoKey;
     const key = data && data.key;
 
@@ -64,7 +65,7 @@ class HomePage extends React.Component {
           {stateData && (
             <section className="svg-container">
               <Choropleth
-                data={{ geoData, geoJSON, stateGeoJSON }}
+                data={{ geoData, geoJSON, stateGeoJSON, stateJSONDejure }}
               ></Choropleth>
             </section>
           )}

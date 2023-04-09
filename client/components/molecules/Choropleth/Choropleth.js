@@ -7,9 +7,10 @@ import { SVG, COLORS } from '../../../constants';
 
 function Choropleth(props) {
   const { data } = props;
-  const { geoData, geoJSON, stateGeoJSON } = data;
+  const { geoData, geoJSON, stateGeoJSON, stateJSONDejure = {} } = data;
   const { features } = geoJSON;
   const { features: stateFeatures } = stateGeoJSON;
+  const { features: dejureFeatures } = stateJSONDejure;
 
   const { height: mapHeight, width: mapWidth, viewBox, strokeWidth } = SVG;
   const updatedFeatures = injectDataToFeatures(features, geoData);
@@ -34,11 +35,12 @@ function Choropleth(props) {
         <svg
           ref={svgRef}
           viewBox={viewBox}
-          stroke={COLORS.white}
+          stroke="#cf5252"
           fill="#cf5272"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {drawMap()}
+          {!dejureFeatures && drawMap()}
+          {!!dejureFeatures && drawStatesDejureMap()}
           {drawStatesMap()}
         </svg>
       </section>
@@ -53,6 +55,7 @@ function Choropleth(props) {
         d={pathFunc(feature)}
         fill={color(feature.properties[key])}
         key={feature.properties[geoKey]}
+        strokeWidth={0}
       ></path>
     ));
   }
@@ -67,7 +70,21 @@ function Choropleth(props) {
           d={pathFunc(feature)}
           fill="pinkle"
           stroke="#ffffff"
-          strokeWidth={0.2}
+          strokeWidth={0.5}
+          key={index}
+        ></path>
+      );
+    });
+  }
+
+  function drawStatesDejureMap() {
+    return dejureFeatures.map((feature, index) => {
+      return (
+        <path
+          d={pathFunc(feature)}
+          fill="pinkle"
+          stroke="#ffffff"
+          strokeWidth={0}
           key={index}
         ></path>
       );

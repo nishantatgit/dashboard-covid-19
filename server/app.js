@@ -42,6 +42,7 @@ app.get('/:country_name', function (req, res) {
 function getHomePageData(countrySelected) {
   const geoJSONPATH = `./data/${countrySelected}.json`;
   const geoStateJSONPath = `./data/geojson/states/${countrySelected}-states.json`;
+  const geoJSONDejurePath = `./data/geojson/dejure/${countrySelected}.json`;
 
   let stateJSON = '{}';
 
@@ -59,8 +60,14 @@ function getHomePageData(countrySelected) {
     console.log('State Level details not available');
   }
 
+  let stateJSONDejure;
+
+  if (fs.existsSync(geoJSONDejurePath)) {
+    stateJSONDejure = fs.readFileSync(geoJSONDejurePath);
+  }
+
   let stateGeoJSON = fs.readFileSync(
-    `./data/geojson/${countrySelected}.json`,
+    `./data/geojson/defacto/${countrySelected}.json`,
     'utf-8'
   );
 
@@ -83,6 +90,10 @@ function getHomePageData(countrySelected) {
     stateGeoObj: JSON.parse(stateGeoJSON),
     stateGeoJSON: JSON.parse(stateAdmin3LevelJSON),
   };
+
+  if (stateJSONDejure) {
+    homePageData.stateJSONDejure = JSON.parse(stateJSONDejure);
+  }
 
   return homePageData;
 }

@@ -1,5 +1,5 @@
-const svgHeight = 500;
-const svgWidth = 800;
+const svgHeight = '800';
+const svgWidth = '650';
 export const SVG = {
   height: svgHeight,
   width: svgWidth,
@@ -8,6 +8,7 @@ export const SVG = {
   spaceTop: 50,
   viewBox: `0 0 ${svgWidth} ${svgHeight}`, //min-x, min-y, width and height
   strokeWidth: 0.5,
+
   BAR: {
     spaceBetween: 10,
     paddingInner: 0.2,

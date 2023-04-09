@@ -6,16 +6,22 @@ import { SVG, COLORS } from '../../../constants';
 
 function Choropleth(props) {
   const { data } = props;
-  const { geoData, geoJSON } = data;
+  const { geoData, geoJSON, stateGeoJSON } = data;
   const { features } = geoJSON;
+  const { features: stateFeatures } = stateGeoJSON;
 
   const { height: mapHeight, width: mapWidth, viewBox, strokeWidth } = SVG;
   const updatedFeatures = injectDataToFeatures(features, geoData);
 
+  const maxValueObj = geoData.data.reduce(function (a, v, i, arr) {
+    return a[geoData.key] > v[geoData.key] ? a : v;
+  }, 1);
+
+  console.log(' maxValueObj ', maxValueObj);
   // generate color scale
   const color = scaleQuantize()
     .range(COLORS.choropleth)
-    .domain([0, geoData.data[0][geoData.key]]);
+    .domain([0, maxValueObj[geoData.key]]);
 
   const projection = geoMercator().fitSize([mapWidth, mapHeight], geoJSON);
   const pathFunc = geoPath().projection(projection);
@@ -24,6 +30,7 @@ function Choropleth(props) {
     <section className="choropleth-map-container">
       <svg viewBox={viewBox} stroke={COLORS.white} strokeWidth={strokeWidth}>
         {drawMap()}
+        {drawStatesMap()}
       </svg>
     </section>
   );
@@ -39,8 +46,27 @@ function Choropleth(props) {
     ));
   }
 
-  function injectDataToFeatures(features, geoData) {
-    const { geoKey: key, data } = geoData;
+  function drawStatesMap() {
+    return stateFeatures.map((feature, index) => {
+      {
+        console.log('drawStatesMap ', feature);
+      }
+      return (
+        <path
+          d={pathFunc(feature)}
+          fill="pinkle"
+          stroke="#ffffff"
+          strokeWidth={0.2}
+          key={index}
+        ></path>
+      );
+    });
+  }
+
+  function injectDataToFeatures(features, displayData) {
+    console.log('features -- ', features);
+    console.log('display data ', displayData);
+    const { geoKey: key, data } = displayData;
     features.forEach((feature) => {
       const correspondingData = data.filter(
         (item) => item[key] === feature.properties[key]
@@ -54,6 +80,7 @@ function Choropleth(props) {
         );
       }
     });
+    console.log('features ', features);
     return features;
   }
 }

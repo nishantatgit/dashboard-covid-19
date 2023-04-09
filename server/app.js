@@ -3,11 +3,13 @@ import bodyParser from 'body-parser';
 import configs from './serverConfigs';
 import template from './template';
 import fs from 'fs';
-import path from 'path';
-import * as d3 from 'd3';
 
 const app = express();
 const { port, lang, dir } = configs;
+
+let countrySelected;
+const defaultCountry = 'Afghanistan';
+const joinKey = 'name';
 
 let scriptName;
 app.use(express.static('./public'));
@@ -28,72 +30,63 @@ app.all('/*', function (req, res, next) {
   next();
 });
 
-app.get('/', function (req, res) {
-  console.log('request recieved...');
+app.get('/:country_name', function (req, res) {
+  console.log(`You requested data for ${req.params.country_name}.`);
+  countrySelected = req.params.country_name || defaultCountry;
   scriptName = 'client';
   res.statusCode = 200;
+  const homePageData = getHomePageData(countrySelected);
   res.send(getHtml('client', homePageData));
 });
 
-app.get('/usa', function (req, res) {
-  console.log('request recieved for usa');
-  scriptName = 'america';
-  res.statusCode = 200;
-  res.send(getHtml('america', usaData));
-});
+function getHomePageData(countrySelected) {
+  const geoJSONPATH = `./data/${countrySelected}.json`;
+  const geoStateJSONPath = `./data/geojson/states/${countrySelected}-states.json`;
 
-// read the json data once before starting the server
+  let stateJSON = '{}';
 
-let data = fs.readFileSync(`./data/covid19india.json`, 'utf-8');
-let stateJSON = fs.readFileSync(`./data/covid19states.json`, 'utf-8');
-let stateGeoJSON = fs.readFileSync(`./data/geojson/india_test.json`, 'utf-8');
-let usData = fs.readFileSync(`./data/json/covid19usstates.json`, 'utf-8');
-let usGeoData = fs.readFileSync(`./data/geojson/usa_states.json`, 'utf-8');
-data = data && JSON.parse(data);
-const stateWiseData = {};
-const stateData = data.forEach((node) => {
-  // current state values --> Recovered, Hospitalized, Deceased
-  const currentState = node['Detected State'];
-  if (!stateWiseData[currentState]) {
-    stateWiseData[currentState] = {
-      State: currentState,
-      Recovered: 0,
-      Hospitalized: 0,
-      Deceased: 0,
-      'Total Cases': 0,
-    };
+  if (fs.existsSync(geoJSONPATH)) {
+    stateJSON = fs.readFileSync(geoJSONPATH);
+  } else {
+    console.log('No file found for this');
   }
 
-  const currentStateData = stateWiseData[currentState];
-  currentStateData[node['Current Status']] =
-    currentStateData[node['Current Status']] + 1;
-  currentStateData['Total Cases'] = currentStateData['Total Cases'] + 1;
-  stateWiseData[currentState] = currentStateData;
-});
+  let stateAdmin3LevelJSON = '{}';
 
-//console.log('stateWiseData ', stateWiseData);
+  if (fs.existsSync(geoStateJSONPath)) {
+    stateAdmin3LevelJSON = fs.readFileSync(geoStateJSONPath);
+  } else {
+    console.log('State Level details not available');
+  }
 
-let stateObj = JSON.parse(stateJSON);
-let states = stateObj.map((v) => ({
-  State: v.State,
-  Deaths: v.Deaths,
-  Recovered: v.Recovered,
-  Active: v.Active,
-  Confirmed: v.Confirmed,
-}));
+  let stateGeoJSON = fs.readFileSync(
+    `./data/geojson/${countrySelected}.json`,
+    'utf-8'
+  );
 
-const usaData = {
-  usData: JSON.parse(usData),
-  usGeoData: JSON.parse(usGeoData),
-};
+  let stateObj = JSON.parse(stateJSON);
+  let stateArray = stateObj.list || [];
+  let states = stateArray.map((v) => ({
+    [joinKey]: v[stateObj.identifier],
+    State: v[stateObj.identifier],
+    Deaths: v.Deaths,
+    Recovered: v.Recovered,
+    Active: v.Active,
+    Confirmed: v.Confirmed,
+    POPULATION: v.POPULATION,
+  }));
 
-const homePageData = {
-  data,
-  stateWiseData: states,
-  stateGeoObj: JSON.parse(stateGeoJSON),
-};
-//console.log('data ', data);
-//console.log('geoJSON', stateGeoJSON);
+  const homePageData = {
+    geoKey: joinKey,
+    key: 'POPULATION',
+    stateWiseData: states,
+    stateGeoObj: JSON.parse(stateGeoJSON),
+    stateGeoJSON: JSON.parse(stateAdmin3LevelJSON),
+  };
+
+  return homePageData;
+}
+
 function getHtml(scriptName, data) {
   const html = template(lang, dir, scriptName, data);
 

@@ -11,18 +11,15 @@ D3Barchart.create = (el, data, configuration) => {
     viewBox,
     spaceTop = 0,
     BAR: { paddingInner },
-    padding
+    padding,
   } = SVG;
-  const bar = d3
-    .select(parentNode)
-    .append('svg')
-    .attr('viewBox', viewBox);
+  const bar = d3.select(parentNode).append('svg').attr('viewBox', viewBox);
   const noOfBars = data.length;
 
   //create x scale function
   const xScale = d3
     .scaleBand()
-    .domain(data.map(v => v.labelText))
+    .domain(data.map((v) => v.labelText))
     .range([padding, chartWidth - padding * 2])
     .paddingInner(paddingInner);
 
@@ -48,13 +45,13 @@ D3Barchart.create = (el, data, configuration) => {
     .append('rect')
     .attr('class', 'bar')
     .attr('width', xScale.bandwidth())
-    .attr('x', d => {
+    .attr('x', (d) => {
       return xScale(d.labelText);
     })
     .attr('y', (d, i) => {
       return chartHeight - yScale(d.data);
     })
-    .attr('height', d => yScale(d.data) - padding);
+    .attr('height', (d) => yScale(d.data) - padding);
 
   bar
     .append('g')
@@ -63,11 +60,11 @@ D3Barchart.create = (el, data, configuration) => {
     .enter()
     .append('text')
     .attr('class', 'x-data')
-    .text(d => d.data)
-    .attr('x', d => {
+    .text((d) => d.data)
+    .attr('x', (d) => {
       return xScale(d.labelText) + xScale.bandwidth() / 2;
     })
-    .attr('y', d => {
+    .attr('y', (d) => {
       return chartHeight - yScale(d.data) + 20;
     });
 

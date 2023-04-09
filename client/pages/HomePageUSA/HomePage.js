@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import Choropleth from '../../components/molecules/Choropleth/Choropleth';
 import Dropdown from '../../components/atoms/Dropdown/Dropdown';
 
-
-
 export default function HomePage(props) {
   const [data, setData] = useState({});
   const [selectedDate, setSelectedDate] = useState(null);

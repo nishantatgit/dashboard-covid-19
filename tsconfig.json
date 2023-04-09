@@ -1,17 +1,24 @@
 {
-  "compilerOptions" : {
+  "compilerOptions": {
     "module": "commonjs",
-    "lib": [  "ES5", "ES6", "ES7", "ESNext", "DOM", "DOM.Iterable", "ES2015.Symbol", "ES2015.Symbol.WellKnown"],
+    "lib": [
+      "ES5",
+      "ES6",
+      "ES7",
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "ES2015.Symbol",
+      "ES2015.Symbol.WellKnown"
+    ],
     "target": "es5",
     "pretty": true,
-    "jsx":"react",
+    "jsx": "react",
     "esModuleInterop": true,
     "allowJs": true,
     "checkJs": false,
-    "noImplicitAny":false,
+    "noImplicitAny": false,
     "noEmitOnError": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

@@ -6,7 +6,7 @@ body {
 .flex-container {
   display: flex;
   flex-direction: column;
-
+  margin-top: 50px;
   @media (min-width: 768px) {
     flex-direction: row;
   }
@@ -14,9 +14,6 @@ body {
   .svg-container {
     width: 90%;
     margin: auto;
-    @media (min-width: 768px) {
-      width: 50%;
-    }
   }
 
   .table-container {
@@ -26,4 +23,8 @@ body {
       width: 50%;
     }
   }
+}
+
+svg {
+  fill: #cf5272;
 }

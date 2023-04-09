@@ -24,22 +24,20 @@ module.exports = {
         use: [
           {
             loader: 'tee-loader',
-            
-              options: { label: 'after-style-loader-@@@@@@@@@@@@@@@'}
-            
+
+            options: { label: 'after-style-loader-@@@@@@@@@@@@@@@' },
           },
           {
             loader: 'style-loader',
           },
           {
             loader: 'tee-loader',
-            
-              options: { label: 'after-css-loader-@@@@@@@@@@@@@@@'}
-            
+
+            options: { label: 'after-css-loader-@@@@@@@@@@@@@@@' },
           },
           {
             loader: 'css-loader',
-          },  
+          },
           {
             loader: 'sass-loader',
           },
@@ -61,11 +59,11 @@ module.exports = {
   },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
+    extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
   },
-  resolveLoader : {
-    alias : {
-        'tee-loader' : path.resolve(__dirname, './loaders/tee-loader.js')
-    }
-  }
+  resolveLoader: {
+    alias: {
+      'tee-loader': path.resolve(__dirname, './loaders/tee-loader.js'),
+    },
+  },
 };

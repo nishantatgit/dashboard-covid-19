@@ -9,22 +9,22 @@ export default class Barchart extends React.Component {
 
   componentDidMount() {
     const {
-      props: { data }
+      props: { data },
     } = this;
     console.log('bar chart data --> ', data);
     D3Barchart.create(
       this.barChartRef,
-      data.map(v => ({ data: v['Confirmed'], labelText: v.State })),
+      data.map((v) => ({ data: v['Confirmed'], labelText: v.State })),
       {
         labelX: 'State',
-        labelY: 'Total cases'
+        labelY: 'Total cases',
       }
     );
   }
 
   render() {
     const {
-      props: { className }
+      props: { className },
     } = this;
     return (
       <section className="barchart-container" ref={this.barChartRef}></section>

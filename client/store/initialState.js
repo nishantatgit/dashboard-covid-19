@@ -1,4 +1,4 @@
 export default {
-  hotelDisplayIndex: [1,20],
-  hotels: []
-}
+  hotelDisplayIndex: [1, 20],
+  hotels: [],
+};

@@ -31,7 +31,7 @@ class HomePage extends React.Component {
   componentDidMount() {
     try {
       const data = { ...window.__NX__ };
-
+      console.log('data extracted from window ', data );
       this.setState({
         data: { ...data },
       });
@@ -51,12 +51,12 @@ class HomePage extends React.Component {
     const geoKey = data && data.geoKey;
     const key = data && data.key;
 
-    const values = stateData && stateData.filter((val: Val) => !!val.State);
-
+    const values = stateData && stateData.filter((val: Val) => !!val[key]);
+    console.log('geoData populated with geoKey and key --- ', geoKey, key);
     const geoData = values && {
       geoKey,
       key,
-      data: [...values.map((v: Val) => ({ ...v, name: v.State }))],
+      data: values,
     };
 
     return (

@@ -28,12 +28,12 @@ export const COLORS = (function () {
   const black = '#000000';
 
   const one = '#e4f0fa';
-  const two = '#aed2f0';
-  const three = '#78b4e6';
-  const four = '#78b4e6';
-  const five = '#2276bd';
-  const six = '#195487';
-  const seven = '#0f3251';
+  const two = '#69ace4';
+  const three = '#4899de';
+  const four = '#2787d8';
+  const five = '#2172b7';
+  const six = '#1b5d96';
+  const seven = '#154974';
   const eight = '#05111b';
 
   return {
@@ -47,7 +47,62 @@ export const COLORS = (function () {
     white,
     black,
 
-    choropleth: [two, three, four, five, six, seven],
+    choropleth: {
+      bluish: [two, three, four, five, six, seven],
+      greenish: [
+        '#47EC9D',
+        '#37D489',
+        '#31BC7A',
+        '#31BC7A',
+        '#258D5B',
+        '#1F764C',
+        '#1F764C',
+      ],
+      pinkish: [
+        // generator url -> https://www.shadegenerator.com/
+        //generator color #CF5272(Pinkle)
+        // background - color #F3D4DC
+        '#D66C87',
+        '#D15B79',
+        '#C54E6C',
+        '#BA4A67',
+        '#B04661',
+        '#A6425B',
+        '#722D3F',
+      ],
+      yellowish: [
+        // generator color #F2AE30
+        // background - color #FBE7C1
+        '#F5C264',
+        '#F4BA4F',
+        '#F3B23A',
+        '#E6A52E',
+        '#CE9429',
+        '#A97A22',
+      ],
+      aubergine: [
+        // generator color #400036
+        // background - color #D9CCD7
+        '#704068',
+        '#5D2654',
+        '#53194A',
+        '#4A0D40',
+        '#3D0033',
+        '#3A0031',
+        '#2D0026',
+      ],
+      goldenApricot: [
+        // generator color #F3D6C5
+        // background - color #F9EBE2
+        '#F5DCCE',
+        '#F4D8C8',
+        '#DBC1B1',
+        '#B6A194',
+        '#9E8B80',
+        '#61564F',
+        '#6D6059',
+      ],
+    },
   };
 })();
 

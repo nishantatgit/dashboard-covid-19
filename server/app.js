@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import configs from './serverConfigs';
 import template from './template';
 import fs from 'fs';
+import UTILS from './utils';
+import { NORMALIZATION_METHOD_TYEPES } from './constants';
 
 const app = express();
 const { port, lang, dir } = configs;
@@ -17,6 +19,7 @@ app.use(express.static('./public'));
 app.use(
   bodyParser.urlencoded({
     extended: true,
+    type: '*/*',
   })
 );
 
@@ -49,7 +52,7 @@ function getHomePageData(countrySelected) {
   if (fs.existsSync(geoJSONPATH)) {
     stateJSON = fs.readFileSync(geoJSONPATH);
   } else {
-    console.log('No file found for this');
+    console.log('No data file found for this');
   }
 
   let stateAdmin3LevelJSON = '{}';
@@ -73,20 +76,25 @@ function getHomePageData(countrySelected) {
 
   let stateObj = JSON.parse(stateJSON);
   let stateArray = stateObj.list || [];
-  let states = stateArray.map((v) => ({
-    [joinKey]: v[stateObj.identifier],
-    State: v[stateObj.identifier],
-    Deaths: v.Deaths,
-    Recovered: v.Recovered,
-    Active: v.Active,
-    Confirmed: v.Confirmed,
-    POPULATION: v.POPULATION,
-  }));
+  let identifier = stateObj.identifier;
+  let project = stateObj.project;
+  console.log(
+    `Identifier for this request is ${identifier} and project is ${project}`
+  );
+  let states = [];
+  let normalisedStateData = [];
+
+  if (stateArray.length > 0) {
+    states = [...stateArray];
+    // let transformedObject = UTILS.boxCoxTransformation(states, project);
+    // normalisedStateData = transformedObject.transformedData;
+    normalisedStateData = states;
+  }
 
   const homePageData = {
-    geoKey: joinKey,
-    key: 'POPULATION',
-    stateWiseData: states,
+    geoKey: identifier,
+    key: project,
+    stateWiseData: normalisedStateData,
     stateGeoObj: JSON.parse(stateGeoJSON),
     stateGeoJSON: JSON.parse(stateAdmin3LevelJSON),
   };

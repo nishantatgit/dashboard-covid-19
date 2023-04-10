@@ -1,0 +1,304 @@
+{
+  "list": [
+    {
+      "name": "Acre",
+      "Code": "AC",
+      "Capital": "Rio Branco",
+      "Area": 164123,
+      "Population": 916000,
+      "Density": 6.34,
+      "GDP": 21000,
+      "HDI": 0.719,
+      "HieghtestPoint": 609
+    },
+    {
+      "name": "Alagoas",
+      "Code": "AL",
+      "Capital": "Maceió",
+      "Area": 27779,
+      "Population": 3383000,
+      "Density": 125.52,
+      "GDP": 73000,
+      "HDI": 0.683,
+      "HieghtestPoint": 844
+    },
+    {
+      "name": "Amapá",
+      "Code": "AP",
+      "Capital": "Macapá",
+      "Area": 142829,
+      "Population": 873000,
+      "Density": 2.63,
+      "GDP": 9000,
+      "HDI": 0.74,
+      "HieghtestPoint": 701
+    },
+    {
+      "name": "Amazonas",
+      "Code": "AM",
+      "Capital": "Manaus",
+      "Area": 1559159,
+      "Population": 4226000,
+      "Density": 2.58,
+      "GDP": 103000,
+      "HDI": 0.733,
+      "HieghtestPoint": 2994
+    },
+    {
+      "name": "Bahia",
+      "Code": "BA",
+      "Capital": "Salvador",
+      "Area": 564733,
+      "Population": 15063000,
+      "Density": 30.52,
+      "GDP": 257000,
+      "HDI": 0.714,
+      "HieghtestPoint": 2033
+    },
+    {
+      "name": "Ceará",
+      "Code": "CE",
+      "Capital": "Fortaleza",
+      "Area": 148921,
+      "Population": 8934000,
+      "Density": 60.33,
+      "GDP": 157000,
+      "HDI": 0.735,
+      "HieghtestPoint": 1154
+    },
+    {
+      "name": "Distrito Federal",
+      "Code": "DF",
+      "Capital": "Brasília",
+      "Area": 5780,
+      "Population": 3164000,
+      "Density": 493,
+      "GDP": 249000,
+      "HDI": 0.85,
+      "HieghtestPoint": 1341
+    },
+    {
+      "name": "Espírito Santo",
+      "Code": "ES",
+      "Capital": "Vitória",
+      "Area": 46095,
+      "Population": 4025000,
+      "Density": 80.63,
+      "GDP": 125000,
+      "HDI": 0.772,
+      "HieghtestPoint": 2892
+    },
+    {
+      "name": "Goiás",
+      "Code": "GO",
+      "Capital": "Goiânia",
+      "Area": 340112,
+      "Population": 7157000,
+      "Density": 18.46,
+      "GDP": 202000,
+      "HDI": 0.769,
+      "HieghtestPoint": 1691
+    },
+    {
+      "name": "Maranhão",
+      "Code": "MA",
+      "Capital": "São Luís",
+      "Area": 331937,
+      "Population": 7196000,
+      "Density": 19.03,
+      "GDP": 102000,
+      "HDI": 0.687,
+      "HieghtestPoint": 804
+    },
+    {
+      "name": "Mato Grosso",
+      "Code": "MT",
+      "Capital": "Cuiabá",
+      "Area": 903366,
+      "Population": 3386000,
+      "Density": 4.01,
+      "GDP": 142000,
+      "HDI": 0.774,
+      "HieghtestPoint": 1118
+    },
+    {
+      "name": "Mato Grosso do Sul",
+      "Code": "MS",
+      "Capital": "Campo Grande",
+      "Area": 357146,
+      "Population": 2873000,
+      "Density": 7.83,
+      "GDP": 107000,
+      "HDI": 0.766,
+      "HieghtestPoint": 1065
+      
+    },
+    {
+      "name": "Minas Gerais",
+      "Code": "MG",
+      "Capital": "Belo Horizonte",
+      "Area": 586522,
+      "Population": 21263000,
+      "Density": 31.72,
+      "GDP": 583000,
+      "HDI": 0.787,
+      "HieghtestPoint": 2892
+    },
+    {
+      "name": "Pará",
+      "Code": "PA",
+      "Capital": "Belém",
+      "Area": 1247955,
+      "Population": 8637000,
+      "Density": 7.02,
+      "GDP": 156000,
+      "HDI": 0.698,
+      "HieghtestPoint": 906
+    },
+    {
+      "name": "Paraíba",
+      "Code": "PB",
+      "Capital": "João Pessoa",
+      "Area": 56470,
+      "Population": 4174000,
+      "Density": 78.93,
+      "GDP": 60000,
+      "HDI": 0.722,
+      "HieghtestPoint": 1197
+    },
+    {
+      "name": "Paraná",
+      "Code": "PR",
+      "Capital": "Curitiba",
+      "Area": 199308,
+      "Population": 11606000,
+      "Density": 43.46,
+      "GDP": 417000,
+      "HDI": 0.792,
+      "HieghtestPoint": 1877
+    },
+    {
+      "name": "Pernambuco",
+      "Code": "PE",
+      "Capital": "Recife",
+      "Area": 98148,
+      "Population": 9636000,
+      "Density": 103.83,
+      "GDP": 201000,
+      "HDI": 0.727,
+      "HieghtestPoint": 1260
+    },
+    {
+      "name": "Piauí",
+      "Code": "PI",
+      "Capital": "Teresina",
+      "Area": 251578,
+      "Population": 3333000,
+      "Density": 9.73,
+      "GDP": 26000,
+      "HDI": 0.697,
+      "HieghtestPoint": 860
+    },
+    {
+      "name": "Rio de Janeiro",
+      "Code": "RJ",
+      "Capital": "Rio de Janeiro",
+      "Area": 43780,
+      "Population": 17363000,
+      "Density": 387.46,
+      "GDP": 693000,
+      "HDI": 0.796,
+      "HieghtestPoint": 2792
+    },
+    {
+      "name": "Rio Grande do Norte",
+      "Code": "RN",
+      "Capital": "Natal",
+      "Area": 52811,
+      "Population": 3614000,
+      "Density": 62.74,
+      "GDP": 76000,
+      "HDI": 0.731,
+      "HieghtestPoint": 868
+    },
+    {
+      "name": "Rio Grande do Sul",
+      "Code": "RS",
+      "Capital": "Porto Alegre",
+      "Area": 281730,
+      "Population": 11456000,
+      "Density": 36.84,
+      "GDP": 444000,
+      "HDI": 0.787,
+      "HieghtestPoint": 1398
+    },
+    {
+      "name": "Rondônia",
+      "Code": "RO",
+      "Capital": "Porto Velho",
+      "Area": 237591,
+      "Population": 1831000,
+      "Density": 7.34,
+      "GDP": 19000,
+      "HDI": 0.725,
+      "HieghtestPoint": 1126
+    },
+    {
+      "name": "Roraima",
+      "Code": "RR",
+      "Capital": "Boa Vista",
+      "Area": 224301,
+      "Population": 684000,
+      "Density": 2.54,
+      "GDP": 8000,
+      "HDI": 0.752,
+      "HieghtestPoint": 2734
+    },
+    {
+      "name": "Santa Catarina",
+      "Code": "SC",
+      "Capital": "Florianópolis\tJoinville",
+      "Area": 95736,
+      "Population": 7204000,
+      "Density": 69.74,
+      "GDP": 293000,
+      "HDI": 0.808,
+      "HieghtestPoint": 1827
+    },
+    {
+      "name": "São Paulo",
+      "Code": "SP",
+      "Capital": "São Paulo",
+      "Area": 248223,
+      "Population": 46257000,
+      "Density": 175.73,
+      "GDP": 1964000,
+      "HDI": 0.826,
+      "HieghtestPoint": 2798
+    },
+    {
+      "name": "Sergipe",
+      "Code": "SE",
+      "Capital": "Aracaju",
+      "Area": 21915,
+      "Population": 2396000,
+      "Density": 97.64,
+      "GDP": 38000,
+      "HDI": 0.702,
+      "HieghtestPoint": 742
+    },
+    {
+      "name": "Tocantins",
+      "Code": "TO",
+      "Capital": "Palmas",
+      "Area": 277721,
+      "Population": 1674000,
+      "Density": 5.74,
+      "GDP": 21000,
+      "HDI": 0.743,
+      "HieghtestPoint": 1340
+    }
+  ],
+  "identifier": "name",
+  "project": "Area"
+}

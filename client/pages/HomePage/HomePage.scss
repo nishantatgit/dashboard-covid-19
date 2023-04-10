@@ -6,15 +6,16 @@ body {
 .flex-container {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: -50px;
   @media (min-width: 768px) {
     flex-direction: row;
   }
 
   .svg-container {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 97vh;
+    align-items: center;
   }
 }
 
